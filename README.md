@@ -1,2 +1,3 @@
-# app_gonzales
-Aplicaciones Gonzales
+# Aplicaciones Gonzales
+
+Desarrollado GHOST Blogging.
