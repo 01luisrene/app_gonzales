@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {{! Agrego al head }}
+  {{> "head"}}
+</head>
+<body class="{{body_class}}">
+    {{navigation}}
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          {{! Everything else gets inserted here }}
+          {{{body}}}
+        </div>
+      </div>
+    </div>
+    {{! Agrego al footer }}
+    {{> "footer"}}
+</body>
+</html>
