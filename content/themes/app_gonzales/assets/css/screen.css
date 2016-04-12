@@ -1,9 +1,21 @@
 body{
+	font-family: "Lato", serif !important;
 	padding-top: 70px;
+	font-size: 18px;
+	line-height: 25px;
 }
+/* Nav */
+.navbar{
+	font-family: "Merriweather", serif;
+}
+.navbar-nav li:last-child a{
 
+	padding: 14px 0 0 30px;
+}
+/* Footer */
 .footer-inner{
 	background: #FFAC84;
+	font-family: "Merriweather", serif;
 	margin-top: 2em;
 	padding-top: 1em;
 	padding-bottom: 1em;

@@ -16,12 +16,8 @@
         {{#foreach navigation}}
         <li class="nav-{{slug}}{{#if current}} active{{/if}}" role="presentation"><a href="{{url absolute="true"}}">{{label}}</a></li>
         {{/foreach}}
+        <li role="presentation"><a href="#"><i class="material-icons">&#xE8B6;</i></a></li>
       </ul>
-      <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-      </form>
     </div>
   </div>
 </nav>
