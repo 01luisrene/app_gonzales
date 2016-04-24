@@ -1,3 +1,5 @@
-# Aplicaciones Gonzales
+# Mis plantillas para Ghost
 
-Desarrollado GHOST Blogging.
+GHOST Blogging.
+
+### [01luisrene](http://01luisrene.com)
