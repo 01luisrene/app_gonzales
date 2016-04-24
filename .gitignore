@@ -1,2 +1,3 @@
 # Logs
 *.db
+/content/data/ghost-dev.db
