@@ -1,0 +1,36 @@
+<header class="main-header {{#is "index"}}{{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}{{else}} {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}{{/is}}">
+
+
+{{navigation}}
+
+<section class="section-header">
+  {{#is "index"}}
+    <div class="vertical box-inner">
+      <div class="main-header-content">
+        <h1 class="page-title">{{@blog.title}}</h1>
+        <h2 class="page-description">{{@blog.description}}</h2>
+      </div>
+    </div>
+  {{else}}
+    <div class="vertical box-inner">
+      <div class="main-header-content">
+        <h1 class="post-title">{{title}}</h1>
+      </div>
+    </div>
+  {{/is}}
+
+  <form class="form-search box-inner">
+    <input type="text" id="js_campo_search" placeholder="Search...">
+  </form>
+  <div class="box-results" id="js_box_results" style="display:none;">
+    <span class="caret"></span>
+    <div class="box-list-results  box-inner">
+      <span class="box-results-close" id="js_box_results_close" title="Close">
+        <i class="material-icons md-36">close</i>
+      </span>
+      <ul class="list-results" id="js_list_results"></ul>
+    </div>
+  </div>
+
+</section>
+</header>

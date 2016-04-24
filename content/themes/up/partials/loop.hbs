@@ -1,11 +1,11 @@
 {{! Previous/next page links - only displayed on page 2+ }}
-<div class="extra-pagination inner">
+<div class="extra-pagination">
     {{pagination}}
 </div>
 
 {{! This is the post loop - each post will be output using this markup }}
 {{#foreach posts}}
-<article class="{{post_class}}">
+<article class="{{post_class}} box-inner">
     <header class="post-header">
         <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
     </header>

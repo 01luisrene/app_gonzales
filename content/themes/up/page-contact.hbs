@@ -1,0 +1,40 @@
+{{!< default}}
+
+{{! This is a page template. A page outputs content just like any other post, and has all the same
+    attributes by default, but you can also customise it to behave differently if you prefer. }}
+
+{{! Everything inside the #post tags pulls data from the page }}
+{{#post}}
+
+{{> "header"}}
+
+<main class="content" role="main">
+  <article class="{{post_class}}">
+
+    <section class="post-content">
+        {{content}}
+    </section>
+    <section>
+      <form class="formulario-contacto" action="//formspree.io/01luisrene@gmail.com" method="POST" id="js_formulario_contacto">
+        <h3 class="sub-title-contacto">Formulario de contacto</h3>
+        <!-- DO NOT EDIT BELOW THIS LINE -->
+        <input type="hidden" name="_subject" value="Mensaje de {{site.url}}" />
+        <input type="text" name="_gotcha" style="display:none" />
+        <input type="hidden" name="_next" value="{{site.url}}/thanks/" />
+        <div class="form-imput">
+          <input type="text" name="name" placeholder="Nombre completo" required></input>
+        </div>
+        <div class="form-imput"> 
+          <input type="email" name="email" placeholder="Correo electrónico" required></input>
+        </div>
+        <div class="form-imput">
+          <textarea name="message" id="" cols="30" rows="3" placeholder="Escribe tu mensaje :)" required></textarea>
+        </div>
+        <div class="form-imput">
+          <input class="btn btn-form" type="submit" value="Enviar mensaje"></input>
+        </div>
+      </form>
+    </section>
+  </article>
+</main>
+{{/post}}

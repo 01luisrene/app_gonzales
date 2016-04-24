@@ -1,10 +1,18 @@
 <nav class="navigation">
-	<figure class="logo">
-		<a href="/">Logo</a>
-	</figure>
-  <ul class="list-navigation">
-  {{#foreach navigation}}
-    <li class="item-{{slug}}{{#if current}} item-current{{/if}}" role="presentation"><a href="{{url absolute="true"}}">{{label}}</a></li>
-  {{/foreach}}
-  </ul>
+	<div class="box-inner box-inner-nav">
+		{{#if @blog.logo}}
+		<figure class="logo">
+				<a href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}"></a>
+		</figure>
+		{{else}}
+			<a class="name-app" href="{{@blog.url}}">{{@blog.title}}</a>
+		{{/if}}
+		<ul class="nav-menu">
+			{{#foreach navigation}}
+			  <li class="nav-menu-item{{#if current}} item-current{{/if}}" role="presentation"><a href="{{url absolute="true"}}">{{label}}</a></li>
+			{{/foreach}}
+		</ul>
+	</div>
 </nav>
+
+
