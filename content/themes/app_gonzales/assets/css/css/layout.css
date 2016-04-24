@@ -1,0 +1,30 @@
+/* Nav */
+.navbar {
+  font-family: "Merriweather", serif; }
+
+.navbar-nav li:last-child a {
+  padding: 14px 0 0 30px; }
+
+/* Footer */
+.footer-inner {
+  background: #FFAC84;
+  font-family: "Merriweather", serif;
+  margin-top: 2em;
+  padding-top: 1em;
+  padding-bottom: 1em; }
+
+.list-redes {
+  display: inline-block;
+  margin-right: 15px;
+  height: 30px;
+  width: 30px; }
+
+.list-redes:last-child {
+  margin-right: 0; }
+
+.list-redes img {
+  border: 2px solid;
+  border-radius: 50%;
+  max-width: 100%; }
+
+/*# sourceMappingURL=layout.css.map */
