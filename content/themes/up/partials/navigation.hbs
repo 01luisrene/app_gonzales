@@ -1,0 +1,10 @@
+<nav class="navigation">
+	<figure class="logo">
+		<a href="/">Logo</a>
+	</figure>
+  <ul class="list-navigation">
+  {{#foreach navigation}}
+    <li class="item-{{slug}}{{#if current}} item-current{{/if}}" role="presentation"><a href="{{url absolute="true"}}">{{label}}</a></li>
+  {{/foreach}}
+  </ul>
+</nav>

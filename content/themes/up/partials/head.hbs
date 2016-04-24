@@ -1,0 +1,41 @@
+<head>
+  {{! Document Settings }}
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  {{! Page Meta }}
+  <title>{{meta_title}}</title>
+  <meta name="description" content="{{meta_description}}" />
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="robots" content="INDEX, FOLLOW" />
+  <meta name="author" content="Luis Rene Mas Mas" />
+  <meta name="application-name" content="up v. 1.0"/>
+
+  {{! Page to see ma localización http://www.geo-tag.de/generator/en.html }}
+  <meta name="geo.placename" content="" />
+  <meta name="geo.region" content="" />
+
+  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
+  <meta name="apple-mobile-web-app-capable" content="no" />
+
+  <link rel="canonical" href=""/>
+
+  <link type="text/plain" rel="author" href="{{asset "/humans.txt"}}" />
+  <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
+
+  {{! Styles'n'Scripts }}
+  <link rel="stylesheet" href="{{asset "css/vendor/normalize.css"}}">
+  <link rel="stylesheet" type="text/css" href="{{asset "css/up.css"}}" />
+  <link href='//fonts.googleapis.com/css?family=Lato:400,700,300,700italic|Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="{{asset "css/vendor/animate.css"}}" />
+  <link rel="stylesheet" type="text/css" href="{{asset "css/vendor/monokai-sublime.css"}}" />
+  {{! Script Modernizr }}
+  <script src="{{asset "js/vendor/modernizr-2.8.3.min.js"}}"></script>
+  {{! Ghost outputs important style and meta data with this tag }}
+  {{ghost_head}}
+</head>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+{{> head }}
+<body class="{{body_class}} nav-closed">
+  {{navigation}}
+  <div class="site-wrapper">
+
+    {{! Everything else gets inserted here }}
+    {{{body}}}
+
+    <footer class="site-footer clearfix">
+      <section class="copyright">
+        {{@blog.description}} 
+      </section>
+      <section class="poweredby">
+      <section>
+        <a class="subscribe-button icon-feed" href="{{@blog.url}}/rss/">Subscribe</a>
+      </section>
+      {{@blog.title}}
+      &copy; {{date format="YYYY"}}
+      <div class="social-networks">
+        <a href="#">Facebook</a>
+        <a href="#">Twitter</a>
+        <a href="#">Youtube</a>
+        <a href="#">Instagram</a>
+      </div>
+      </section>
+    </footer>
+
+  </div>
+  {{> scripts}}
+</body>
+</html>
