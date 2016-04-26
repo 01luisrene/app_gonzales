@@ -1,5 +1,6 @@
+<header>
 <nav class="navigation">
-	<div class="box-inner box-inner-nav">
+	<div class="box-inner box-inner-navigation">
 		{{#if @blog.logo}}
 		<figure class="logo">
 				<a href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}"></a>
@@ -9,10 +10,11 @@
 		{{/if}}
 		<ul class="nav-menu">
 			{{#foreach navigation}}
-			  <li class="nav-menu-item{{#if current}} item-current{{/if}}" role="presentation"><a href="{{url absolute="true"}}">{{label}}</a></li>
+			  <li class="nav-menu-item {{slug}} {{#if current}} item-current{{/if}}" role="presentation"><a href="{{url absolute="true"}}">{{label}}</a></li>
 			{{/foreach}}
 		</ul>
 	</div>
 </nav>
+</header>
 
 

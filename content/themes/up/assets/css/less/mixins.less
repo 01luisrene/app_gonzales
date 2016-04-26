@@ -1,0 +1,19 @@
+.text-hide() {
+  display: block;
+  font: ~"0/0" a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+	text-indent:-666em;
+	overflow:hidden;
+}
+.clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
