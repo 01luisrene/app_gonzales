@@ -336,7 +336,7 @@ body {
   font-size: 1.2em;
   color: #494949;
 }
-.author-image {
+.author-template .author-image {
   display: block;
   position: absolute;
   bottom: 0;
@@ -344,7 +344,7 @@ body {
   margin-left: -60px;
   margin-bottom: -60px;
 }
-.author-image .img {
+.author-template .author-image .img {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -361,15 +361,15 @@ body {
   height: 120px;
   width: 120px;
 }
-.author-profile {
+.author-template .author-profile {
   padding-top: 4em;
   padding-bottom: 0;
 }
-.author-meta {
+.author-template .author-meta {
   text-align: center;
   font-size: 1.5em;
 }
-.author-meta span {
+.author-template .author-meta span {
   margin-left: .7em;
 }
 .site-footer {

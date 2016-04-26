@@ -2,7 +2,7 @@
 {{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
 
 {{! If we have a tag cover, display that - else blog cover - else nothing }}
-<header class="presentation-section tag-head {{#if tag.image}}" style="background-image: url({{tag.image}}){{else}}{{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}{{/if}}">
+<section class="presentation-section tag-head {{#if tag.image}}" style="background-image: url({{tag.image}}){{else}}{{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}{{/if}}">
   <div class="vertical box-inner">
     <div class="presentation-content">
       <h1 class="post-title">{{tag.name}}</h1>
@@ -17,7 +17,7 @@
     </div>
   </div>
   {{> "search"}}
-</header>
+</section>
 
 {{! The main content area on the homepage }}
 <main class="posts-content box-inner" role="main">
