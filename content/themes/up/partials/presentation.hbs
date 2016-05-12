@@ -1,4 +1,7 @@
 <section class="presentation-section{{#is "index"}}{{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}{{else}} {{#if image}}" style="background-image: url({{image}}){{else}} no-cover{{/if}}{{/is}}">
+
+  {{> "search"}}
+
   {{#is "index"}}
     <div class="vertical box-inner">
       <div class="presentation-content">
@@ -14,6 +17,4 @@
       </div>
     </div>
   {{/is}}
-
-  {{> "search"}}
 </section>
