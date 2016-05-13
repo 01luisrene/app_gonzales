@@ -7,6 +7,8 @@
       <a href="{{url}}" title="{{{title}}}">
         <img src="{{image}}" alt="{{{title}}} - Picture">
       </a>
+    {{else}}
+      <img src="{{asset "images/cover/default.png"}}" alt="{{{title}}} - Picture">
     {{/if}}
     {{#if author.image}}
       <img class="author-thumb" src="{{author.image}}" alt="{{author.name}}'s Picture" nopin="nopin" title="{{author.name}}"/>
