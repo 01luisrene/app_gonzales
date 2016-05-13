@@ -1,6 +1,7 @@
 <header>
 <nav class="navigation">
 	<div class="box-inner box-inner-navigation">
+	<div class="box-nav-movil">
 		{{#if @blog.logo}}
 		<figure class="logo">
 				<a href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}"></a>
@@ -8,11 +9,17 @@
 		{{else}}
 			<a class="name-app" href="{{@blog.url}}">{{@blog.title}}</a>
 		{{/if}}
-		<ul class="nav-menu">
-			{{#foreach navigation}}
-			  <li class="nav-menu-item {{slug}} {{#if current}} item-current{{/if}}" role="presentation"><a href="{{url absolute="true"}}">{{label}}</a></li>
-			{{/foreach}}
-		</ul>
+
+		<span class="nav-icon" id="js_nav_icon">
+			<i class="fa fa-bars" aria-hidden="true"></i>
+		</span>
+	</div>
+
+	<ul class="nav-menu" id="js_nav_menu">
+		{{#foreach navigation}}
+		  <li class="nav-menu-item {{slug}} {{#if current}} item-current{{/if}}" role="presentation"><a href="{{url absolute="true"}}">{{label}}</a></li>
+		{{/foreach}}
+	</ul>
 	</div>
 </nav>
 </header>

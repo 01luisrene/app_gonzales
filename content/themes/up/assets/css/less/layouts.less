@@ -1,3 +1,4 @@
+/*navigation*/
 .navigation{
 	background: @bg-navigation;
 	font-family: @font-family-ds;
@@ -11,7 +12,7 @@
 /* styles for the logo */
 .logo{
 	margin: 0;
-	margin-top: 6px;
+	margin-top: 8px;
 	margin-bottom: 0;
 	//overflow: hidden;
 	a img{
@@ -36,8 +37,8 @@
 
 .nav-menu{
 	padding-left: 0;
-	padding-top: .40em;
-	padding-bottom: .40em;
+	padding-top: 9px;
+	padding-bottom: 0;
 	margin-top: 0;
 	margin-bottom: 0;
 	.nav-menu-item{
@@ -49,7 +50,7 @@
 			color: @color-text-link;
 			text-transform: uppercase;
 			display: block;
-			padding: .7em 1em;
+			padding: .65em 1em;
 			text-decoration: none;
 			line-height: 18px;
 			transition: 1s;
@@ -60,6 +61,9 @@
 			}
 		}
 	}
+}
+.nav-icon{
+	display: none;
 }
 .item-current{
 	background: darken(@bg-navigation, 25%);
@@ -284,6 +288,12 @@
 }
 }
 
+/* styles for page and post*/
+.content{
+	.post-content{
+		.format-body-post-page();
+	}
+}
 //pagination
 .pagination{
 	display: -webkit-flex;

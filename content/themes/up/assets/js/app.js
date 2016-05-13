@@ -26,7 +26,20 @@ function closeSearch(){
 		});
 	});
 }
+function displayNav(){
+	$('#js_nav_icon').on('click', function(event) {
+		event.preventDefault();
+		$('#js_nav_menu').slideToggle();
+	});
+	$(window).resize(function(){
+    var w = $(window).width();
+    if(w>320 && $('#js_nav_menu').is(':hidden')){
+      $('#js_nav_menu').removeAttr('style');     
+    }
+  });
+}
 $(document).ready(function() {
 	search();
-	closeSearch()
+	closeSearch();
+	displayNav();
 });
