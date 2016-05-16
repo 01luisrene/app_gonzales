@@ -6,6 +6,9 @@
 {{! Everything inside the #author tags pulls data from the author }}
 {{#author}}
   <section class="presentation-section author-head {{#if cover}}" style="background-image: url({{cover}}){{else}}no-cover{{/if}}">
+
+    {{> "search"}}
+
     <div class="vertical box-inner">
       <div class="presentation-content">
         <h1 class="page-title">{{name}}</h1>
@@ -14,8 +17,6 @@
         {{/if}}
       </div>
     </div>
-
-     {{> "search"}}
 
     {{#if image}}
     <figure class="author-image">

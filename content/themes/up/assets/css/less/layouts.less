@@ -1,4 +1,20 @@
 /*navigation*/
+//clases headroom
+.headroom {
+  will-change: transform;
+  transition: transform 200ms linear;
+  position: fixed;
+  z-index: 10;
+  right: 0;
+  left: 0;
+  top: 0;
+}
+.headroom--pinned {
+  transform: translateY(0%);
+}
+.headroom--unpinned {
+  transform: translateY(-100%);
+}
 .navigation{
 	background: @bg-navigation;
 	font-family: @font-family-ds;
@@ -191,16 +207,22 @@
 	li{
 		p{
 			font-size: 1.3em;
+			position: relative;
 			&::before{
 				color: @color-white;
-				content: "\f111";
-				font-family: "fontAwesome";
+				position: absolute;
+		    left: 0;
+		    content: "\f111";
+		    font-family: "FontAwesome";
 				font-size: 1em;
+				margin-right: .5em;
 			}
 		}
 		a{
+			display: inline-block;
 			color: @color-white;
 			text-decoration: none;
+			padding-left: 1.5em;
 			&:hover{
 				text-decoration: underline;
 			}

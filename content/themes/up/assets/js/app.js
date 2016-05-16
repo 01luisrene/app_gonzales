@@ -38,8 +38,23 @@ function displayNav(){
     }
   });
 }
+function headroom(){
+	$('#header').headroom({
+      "offset": 100,
+    "tolerance": 5,
+    "classes": {
+      "initial": "animated",
+      "pinned": "",
+      "unpinned": ""
+    }
+  });
+
+  // to destroy
+  $("#header").headroom("destroy");
+}
 $(document).ready(function() {
 	search();
 	closeSearch();
 	displayNav();
+	headroom();
 });
