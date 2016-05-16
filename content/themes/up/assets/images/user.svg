@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg3788"
+   version="1.1"
+   inkscape:version="0.48.5 r10040"
+   sodipodi:docname="New document 2">
+  <defs
+     id="defs3790" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="375"
+     inkscape:cy="520"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1366"
+     inkscape:window-height="705"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata3793">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:#828282;fill-opacity:1"
+       inkscape:connector-curvature="0"
+       d="m 362.85714,381.0175 c 15.74049,0 28.49571,12.75522 28.49571,28.49571 0,15.74049 -12.75522,28.49571 -28.49571,28.49571 -15.74049,0 -28.49571,-12.75522 -28.49571,-28.49571 0,-15.74049 12.75522,-28.49571 28.49571,-28.49571 m 0,122.12448 c 40.30107,0 82.77325,19.8113 82.77325,28.49571 v 14.92632 H 280.08388 v -14.92632 c 0,-8.68441 42.47218,-28.49571 82.77326,-28.49571 m 0,-147.90631 c -29.98834,0 -54.27755,24.2892 -54.27755,54.27754 0,29.98834 24.28921,54.27755 54.27755,54.27755 29.98834,0 54.27754,-24.28921 54.27754,-54.27755 0,-29.98834 -24.2892,-54.27754 -54.27754,-54.27754 z m 0,122.12447 c -36.23026,0 -108.55509,18.18298 -108.55509,54.27755 v 40.70816 h 217.11018 v -40.70816 c 0,-36.09457 -72.32483,-54.27755 -108.55509,-54.27755 z"
+       id="path3024"
+       inkscape:export-filename="C:\Users\LUIS\Documents\GitHub\themesGhost\content\themes\up\assets\images\autor.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+  </g>
+</svg>

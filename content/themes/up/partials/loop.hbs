@@ -10,10 +10,19 @@
     {{else}}
       <img src="{{asset "images/cover/default.png"}}" alt="{{{title}}} - Picture">
     {{/if}}
-    {{#if author.image}}
-      <img class="author-thumb" src="{{author.image}}" alt="{{author.name}}'s Picture" nopin="nopin" title="{{author.name}}"/>
-      <span class="author-name">{{author}}</span>
-    {{/if}}
+    {{#author}}
+      {{#if author.image}}
+        <a href="{{url}}">
+          <img class="author-thumb" src="{{author.image}}" alt="{{author.name}}'s Picture" nopin="nopin" title="{{author.name}}"/>
+        </a>
+        <span class="author-name">{{author}}</span>
+      {{else}}
+        <a href="{{url}}">
+          <img class="author-thumb img-author-default" src="{{asset "images/author-default.png"}}" alt="{{author.name}}'s Picture" nopin="nopin" title="image default"/>
+        </a>
+        <span class="author-name">{{author}}</span>
+      {{/if}}
+    {{/author}}
   </div>
   <div class="inner">
     <header class="post-header">

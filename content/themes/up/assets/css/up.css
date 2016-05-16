@@ -70,6 +70,7 @@ pre > code {
   display: block;
   color: #373737;
   margin-top: 15px;
+  margin-bottom: 18px;
   text-transform: uppercase;
   text-decoration: none;
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
@@ -283,6 +284,9 @@ pre > code {
   height: 40px;
   width: 40px;
 }
+.loop-content .post .img-author-default {
+  background: #ffffff;
+}
 .loop-content .post .author-name {
   display: block;
   font: 0/0 a;
@@ -324,15 +328,31 @@ pre > code {
   position: absolute;
   bottom: -20px;
   left: 50%;
-  margin-left: -62.5px;
+  margin-left: -67.5px;
   padding: .4em 1em;
   text-decoration: none;
   transition: .500s;
-  width: 125px;
+  width: 135px;
 }
 .loop-content .post .read-more:hover {
   text-decoration: underline;
-  box-shadow: 5px 5px 0px 0px rgba(50, 50, 50, 0.75);
+  box-shadow: 5px 5px 0px 0px #1f4f89;
+}
+/*styles for post*/
+.post-content {
+  background: tomato;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+}
+.post-content .post {
+  width: 75%;
+}
+.post-content .widget {
+  width: 25%;
 }
 /* styles for page and post*/
 .content .post-content p {
@@ -392,8 +412,22 @@ pre > code {
   top: 1px;
 }
 .page-number {
-  font-size: 1.2em;
+  display: inline-block;
   color: #494949;
+  font-size: 1.2em;
+  text-align: center;
+  margin-top: 10px;
+}
+.box-newer-posts,
+.box-older-posts,
+.page-number {
+  width: 33%;
+}
+.box-older-posts {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
 }
 .author-template .author-image {
   display: block;
