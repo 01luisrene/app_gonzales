@@ -189,9 +189,14 @@
 	min-height: 350px;
 	max-height: 450px;
 	li{
-		p::before{
-			content: "\f111";
-			font-family: "fontAwesome";
+		p{
+			font-size: 1.3em;
+			&::before{
+				color: @color-white;
+				content: "\f111";
+				font-family: "fontAwesome";
+				font-size: 1em;
+			}
 		}
 		a{
 			color: @color-white;
@@ -292,19 +297,20 @@
 }
 }
 /*styles for post*/
-.post-content{
-	background: tomato;
+.layout-post{
 	display: -webkit-flex;
   display: flex;
-  -webkit-justify-content: space-around;
-  justify-content: space-around;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
   flex-wrap: wrap;
   -webkit-flex-wrap: wrap;
 	.post{
-		width: 75%;
+		padding: 0 1em;
+		width: 70%;
 	}
 	.widget{
-		width: 25%;
+		padding: 0 1em;
+		width: 30%;
 	}
 }
 /* styles for page and post*/
@@ -340,7 +346,7 @@
 	display:inline-block;
 	cursor:pointer;
 	color:#666666;
-	font-family:Arial;
+	font-family:@font-family-lato;
 	font-size:15px;
 	padding:6px 24px;
 	text-decoration:none;

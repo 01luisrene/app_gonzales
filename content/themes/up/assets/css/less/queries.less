@@ -2,12 +2,12 @@
 	.presentation-section{
 		background-attachment: fixed;
 	}
-	.box-inner {
+	.box-inner, .layout-post {
 	  width: 1000px;
 	}
 }
 @media (max-width: 992px){
-	.box-inner {
+	.box-inner, .layout-post {
 	  width: 970px;
 	}
 	.box-inner-navigation{
@@ -21,11 +21,22 @@
 	  width: 100%;
 	}
 	.nav-menu{
+		border-top: thin solid darken(@bg-navigation, 10%);
+		box-shadow: inset 0px 3px 7px 0px rgba(255, 255, 255, .5);
 		display: none;
-		clear: both;
+		margin-left: -15px;
+		margin-right: -15px;
+		padding-top: 15px;
+		padding-left: 15px;
+		padding-right: 15px;
+		padding-bottom: 15px;
 		.nav-menu-item {
 			display: block;
 			width: 100%;
+			margin-top: 10px;
+			&:first-child{
+				margin-top: 0;
+			}
 		}
 	}
 	.nav-icon{
@@ -43,13 +54,13 @@
 	}
 }
 @media (min-width: 769px) and (max-width: 991px){
-	.box-inner {
-		width: 98%;
+	.box-inner, .layout-post {
+		width: 100%;
 	}
 }
 @media (max-width: 768px){
-	.box-inner {
-	  width: 98%;
+	.box-inner, .layout-post {
+	  width: 100%;
 	}
 	.loop-content{
 		.post{

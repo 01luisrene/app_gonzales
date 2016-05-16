@@ -235,9 +235,14 @@ pre > code {
   min-height: 350px;
   max-height: 450px;
 }
+.list-results li p {
+  font-size: 1.3em;
+}
 .list-results li p::before {
+  color: #ffffff;
   content: "\f111";
   font-family: "fontAwesome";
+  font-size: 1em;
 }
 .list-results li a {
   color: #ffffff;
@@ -339,20 +344,21 @@ pre > code {
   box-shadow: 5px 5px 0px 0px #1f4f89;
 }
 /*styles for post*/
-.post-content {
-  background: tomato;
+.layout-post {
   display: -webkit-flex;
   display: flex;
-  -webkit-justify-content: space-around;
-  justify-content: space-around;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
   flex-wrap: wrap;
   -webkit-flex-wrap: wrap;
 }
-.post-content .post {
-  width: 75%;
+.layout-post .post {
+  padding: 0 1em;
+  width: 70%;
 }
-.post-content .widget {
-  width: 25%;
+.layout-post .widget {
+  padding: 0 1em;
+  width: 30%;
 }
 /* styles for page and post*/
 .content .post-content p {
@@ -385,7 +391,7 @@ pre > code {
   display: inline-block;
   cursor: pointer;
   color: #666666;
-  font-family: Arial;
+  font-family: 'Lato', sans-serif;
   font-size: 15px;
   padding: 6px 24px;
   text-shadow: 0px 1px 0px #ffffff;
@@ -515,11 +521,13 @@ pre > code {
 .site-wrapper {
   background: #F2F2F2;
 }
-.box-inner {
+.box-inner,
+.layout-post {
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+  word-wrap: break-word;
 }
 .clearfix {
   clear: both;
@@ -534,12 +542,14 @@ pre > code {
   .presentation-section {
     background-attachment: fixed;
   }
-  .box-inner {
+  .box-inner,
+  .layout-post {
     width: 1000px;
   }
 }
 @media (max-width: 992px) {
-  .box-inner {
+  .box-inner,
+  .layout-post {
     width: 970px;
   }
   .box-inner-navigation {
@@ -553,12 +563,23 @@ pre > code {
     width: 100%;
   }
   .nav-menu {
+    border-top: thin solid #1aabdb;
+    box-shadow: inset 0px 3px 7px 0px rgba(255, 255, 255, 0.5);
     display: none;
-    clear: both;
+    margin-left: -15px;
+    margin-right: -15px;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
   }
   .nav-menu .nav-menu-item {
     display: block;
     width: 100%;
+    margin-top: 10px;
+  }
+  .nav-menu .nav-menu-item:first-child {
+    margin-top: 0;
   }
   .nav-icon {
     display: block;
@@ -578,13 +599,15 @@ pre > code {
   }
 }
 @media (min-width: 769px) and (max-width: 991px) {
-  .box-inner {
-    width: 98%;
+  .box-inner,
+  .layout-post {
+    width: 100%;
   }
 }
 @media (max-width: 768px) {
-  .box-inner {
-    width: 98%;
+  .box-inner,
+  .layout-post {
+    width: 100%;
   }
   .loop-content .post {
     width: 48.5%;
