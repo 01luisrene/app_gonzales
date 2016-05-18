@@ -17,15 +17,41 @@
     clear: both;
   }
 }
+//formatting content for pages and articles
 .format-body-post-page(){
   p{
     line-height: 30px;
   }
 }
 
-.borer-radius(@valor){
+.border-radius(@valor){
   -webkit-border-radius: @valor;
   -moz-border-radius: @valor;
   -o-border-radius: @valor;
   -ms-border-radius: @valor;
 }
+.box-shadow(@valor){
+  -webkit-box-shadow: @valor;
+  -moz-box-shadow:    @valor;
+  box-shadow:         @valor;
+}
+
+//Flexbox
+.flex-box-display(){display:-webkit-flex;display:flex;}
+
+.flex-box-j-c(@valor){
+  .flex-box-display();
+  -webkit-justify-content: @valor;
+  justify-content: @valor;
+}
+.flex-box-f-d(@valor){
+  .flex-box-display();
+  -webkit-flex-direction: @valor;
+  flex-direction: @valor;
+}
+.flex-box-loop(@valor){
+  .flex-box-j-c(@valor);
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+}
+//*******************************END*********************************

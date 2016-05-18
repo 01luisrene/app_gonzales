@@ -4,7 +4,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
   {{! Page Meta }}
-  <title>{{meta_title}} &#171; {{@blog.title}}</title>
+  <title>{{#is "index"}}{{meta_title}} &#187; amazing theme designed for you{{else}}{{meta_title}} &#171; {{@blog.title}}{{/is}}</title>
   <meta name="description" content="{{meta_description}}" />
 
   <meta name="HandheldFriendly" content="True" />
@@ -17,11 +17,11 @@
   {{! Page to see ma localización http://www.geo-tag.de/generator/en.html }}
   <meta name="geo.region" content="PE-LAL" />
   <meta name="geo.placename" content="trujillo" />
-
+  <!--[if IE]>
+    <meta name="X-UA-Compatible" content="IE=edge">
+  <![endif]-->
   <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
   <meta name="apple-mobile-web-app-capable" content="no" />
-
-  <link rel="canonical" href=""/>
 
   <link type="text/plain" rel="author" href="{{asset "/humans.txt"}}" />
   <link rel="shortcut icon" href="{{asset "/favicon.ico"}}">
@@ -29,6 +29,16 @@
   {{! Styles'n'Scripts }}
   <link rel="stylesheet" href="{{asset "css/vendor/normalize.css"}}">
   <link rel="stylesheet" type="text/css" href="{{asset "css/up.css"}}" />
+  {{! IE old styles }}
+  <!--[if lt IE 9]>
+  <style>
+    html {overflow: hidden;}
+    .browser-old {background: #171717;display: table-cell;position: fixed;top: 0;left: 0;bottom: 0;right: 0;z-index: 100000;}
+    .browser-old p {display: block;color: #006A93;font-size: 2em;line-height: 40px;position: absolute;top: 30%;padding: 0 1em;text-align: center;width: 100%;}
+    .browser-old p a {color: #00000d;}
+    .browser-old p a:hover {color: #000040;}
+  </style>
+  <![endif]-->
   <link href='//fonts.googleapis.com/css?family=Lato:400,700,300,700italic|Droid+Sans:400,700|Montserrat:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="{{asset "css/font-awesome.min.css"}}">
   <link rel="stylesheet" type="text/css" href="{{asset "css/vendor/animate.css"}}" />

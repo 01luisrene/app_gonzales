@@ -1,0 +1,3 @@
+* Menú de navegación desktop y móvil
+* Política de cookies
+* Botón subir

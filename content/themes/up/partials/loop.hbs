@@ -1,6 +1,49 @@
 {{! This is the post loop - each post will be output using this markup }}
 
 {{#foreach posts}}
+{{#if @first}}
+<article class="{{post_class}} first-post">
+  <span class="first-article-text">
+    <i class="fa fa-quote-left" aria-hidden="true"></i> 
+    Primer Artículo 
+    <i class="fa fa-quote-right" aria-hidden="true"></i>
+  </span>
+  <div class="box-images">
+    {{#if image}}
+      <a href="{{url}}" title="{{{title}}}">
+        <img src="{{image}}" alt="{{{title}}} - Picture">
+      </a>
+    {{else}}
+      <img src="{{asset "images/cover/default.png"}}" alt="{{{title}}} - Picture">
+    {{/if}}
+    {{#if author.image}}
+      {{#author}}
+        <a href="{{url}}">
+          <img class="author-thumb" src="{{image}}" alt="{{name}}'s Picture" nopin="nopin" title="{{name}}"/>
+        </a>
+        <span class="author-name">{{name}}</span>
+      {{/author}}
+    {{else}}
+      <a href="{{author.url}}">
+        <img class="author-thumb img-author-default" src="{{asset "images/author-default.png"}}" alt="Picture" nopin="nopin" title="image default"/>
+      </a>
+    {{/if}}
+  </div>
+  <div class="inner">
+    <header class="post-header">
+      <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
+      <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}"><i class="fa fa-calendar-o" aria-hidden="true"></i> {{date format="DD MMMM YYYY"}}</time>
+    </header>
+      <div class="line"></div>
+    <section class="post-excerpt">
+      <p>{{excerpt words="26"}}...</p>
+    </section>
+  </div>
+  <footer class="post-meta">
+    <a class="read-more" href="{{url}}">Read more <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>  
+  </footer>
+</article>
+{{else}}
 <article class="{{post_class}}">
   <div class="box-images">
     {{#if image}}
@@ -10,27 +53,27 @@
     {{else}}
       <img src="{{asset "images/cover/default.png"}}" alt="{{{title}}} - Picture">
     {{/if}}
-    {{#author}}
-      {{#if author.image}}
+    {{#if author.image}}
+      {{#author}}
         <a href="{{url}}">
-          <img class="author-thumb" src="{{author.image}}" alt="{{author.name}}'s Picture" nopin="nopin" title="{{author.name}}"/>
+          <img class="author-thumb" src="{{image}}" alt="{{name}}'s Picture" nopin="nopin" title="{{name}}"/>
         </a>
-        <span class="author-name">{{author}}</span>
-      {{else}}
-        <a href="{{url}}">
-          <img class="author-thumb img-author-default" src="{{asset "images/author-default.png"}}" alt="{{author.name}}'s Picture" nopin="nopin" title="image default"/>
-        </a>
-        <span class="author-name">{{author}}</span>
-      {{/if}}
-    {{/author}}
+        <span class="author-name">{{name}}</span>
+      {{/author}}
+    {{else}}
+      <a href="{{author.url}}">
+        <img class="author-thumb img-author-default" src="{{asset "images/author-default.png"}}" alt="Picture" nopin="nopin" title="image default"/>
+      </a>
+    {{/if}}
   </div>
   <div class="inner">
     <header class="post-header">
       <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
       <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}"><i class="fa fa-calendar-o" aria-hidden="true"></i> {{date format="DD MMMM YYYY"}}</time>
     </header>
-    <div class="line"></div>
+      <div class="line"></div>
     <section class="post-excerpt">
+    
       <p>{{excerpt words="26"}}...</p>
     </section>
   </div>
@@ -38,6 +81,8 @@
     <a class="read-more" href="{{url}}">Read more <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>  
   </footer>
 </article>
+{{/if}}
+
 {{/foreach}}
 
 {{! Previous/next page links - displayed on every page }}

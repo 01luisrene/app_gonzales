@@ -20,7 +20,11 @@
 
     {{#if image}}
     <figure class="author-image">
-        <div class="img" style="background-image: url({{image}})"><span class="hidden">{{name}}'s Picture</span></div>
+        <div class="img" style="background-image: url({{image}})"><span>{{name}}'s Picture</span></div>
+    </figure>
+    {{else}}
+    <figure class="author-image">
+       <img class="img" src="{{asset "images/author-default.png"}}" alt="Picture" nopin="nopin" title="image default"/>
     </figure>
     {{/if}}
   </section>

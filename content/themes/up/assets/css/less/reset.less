@@ -1,3 +1,4 @@
+/*resetting tags for the theme up*/
 *{
 	box-sizing: border-box;
 }
@@ -5,7 +6,6 @@ body{
 	font-family: @font-family-lato;
 	font-size: 16px;
 	line-height: 25px;
-  padding-top: 56px;
 }
 h1 {
   font-size: 2em;
@@ -39,8 +39,6 @@ code {
 
 pre {
     overflow-x: auto;
-    padding-right: 10px;
-    padding-left: 10px;
     > code {
         border: 0;
         color: inherit;
@@ -48,4 +46,23 @@ pre {
         padding-left: 0;
     }
 }
+progress {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display:block;
+  background-color: transparent;
+  border:none;
+}
 
+progress::-webkit-progress-bar {
+  background: transparent;
+}
+progress::-moz-progress-bar {  
+  background: transparent;
+} 
+
+progress::-webkit-progress-value {
+  background:@bg-progress;
+}
+/**********************************END*******************************************/

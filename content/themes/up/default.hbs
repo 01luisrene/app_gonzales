@@ -2,19 +2,28 @@
 <html>
 {{> "head" }}
 <body class="{{body_class}} nav-closed">
+{{! This message will be displayed if the browser is IE version 8 or less. }}
+  <!--[if lt IE 9]>
+  <div class="browser-old">
+      <p class="browserupgrade">Está utilizando un navegador <strong>antiguo</strong>. Por favor <a href="http://browsehappy.com/">actualice su navegador</a> para mejorar su experiencia.</p>
+  </div>
+  <![endif]-->
    {{navigation}}
   <div class="site-wrapper">
   {{! Everything else gets inserted here }}
   {{{body}}}
   <footer class="site-footer">
     <div class="box-inner container-footer">
+      {{! section for description of the blog }}
       <section class="description">
         <h3>Blog description</h3>
         <p>{{@blog.description}}</p> 
       </section>
-      <section class="copyright">
+      {{! section copyright and social networks }}
+      <section class="copyright-and-social-networks">
         <h3>{{@blog.title}}</h3>
         <p>&copy; {{date format="YYYY"}}</p>
+
       <div class="social-networks">
         <a href="#" target="_blank" title="Facebook">
         <img src="{{asset "images/social-networks/facebook.svg"}}" >
@@ -41,7 +50,18 @@
       </section>
     </div>
   </footer>
+  {{! cookie policy bar }}
+  <div class="barra-aceptacion-cookie" id="js_barra_aceptacion_cookie" style="display: none;">
+    <p> We request your permission to obtain statistical data on its navigation on this website, pursuant to Royal Decree-Law 13/2012. If you continue to browse we consider to accept the use of cookies. 
+    <a href="/politica-cookies/"  class="info-cookie" target="_blank">More information</a> &nbsp;
+    <button id="js_btn_cookie" class="btn-cookie">Ok</button>
+    </p>
   </div>
+  </div>
+  {{! button up }}
+  <a href="#" class="button-up" id="js_button_up">
+    <i class="fa fa-angle-up" aria-hidden="true"></i>
+  </a>
   {{> "scripts"}}
 </body>
 </html>

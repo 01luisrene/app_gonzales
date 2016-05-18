@@ -27,7 +27,7 @@ function closeSearch(){
 	});
 }
 function displayNav(){
-	$('#js_nav_icon').on('click', function(event) {
+	$('#js_nav_icon_mobile').on('click', function(event) {
 		event.preventDefault();
 		$('#js_nav_menu').slideToggle();
 	});
@@ -39,22 +39,106 @@ function displayNav(){
   });
 }
 function headroom(){
-	$('#header').headroom({
-      "offset": 100,
+  $(".headroom").headroom({
+    "offset": 100,
     "tolerance": 5,
     "classes": {
       "initial": "animated",
-      "pinned": "",
-      "unpinned": ""
+      "pinned": "swingInX",
+      "unpinned": "swingOutX"
     }
   });
+}
+function buttonUp(){
+  $(window).scroll(function(){
+    if($(this).scrollTop() > 300){
+      $("#js_button_up").show(); //fadeIn
+    }else{
+      $("#js_button_up").fadeOut(); //fadeOut
+    }
+  });
+  $("#js_button_up").on('click', function (e) {
+    e.preventDefault();
+      $("body,html").animate({
+      scrollTop: 0
+    },700);
+    return false;
+  });
+}
+function highlight(){
+	$('pre code').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+}
+function cookiePolicy(){
+  function setCookie(cname,cvalue,exdays) {
+      var d = new Date();
+      d.setTime(d.getTime() + (exdays*24*60*60*1000));
+      var expires = "expires=" + d.toGMTString();
+      document.cookie = cname+"="+cvalue+"; "+expires + "; path=/";
+  }
 
-  // to destroy
-  $("#header").headroom("destroy");
+  function getCookie(cname) {
+      var name = cname + "=";
+      var ca = document.cookie.split(';');
+      for(var i=0; i<ca.length; i++) {
+          var c = ca[i];
+          while (c.charAt(0)==' ') c = c.substring(1);
+          if (c.indexOf(name) == 0) {
+              return c.substring(name.length, c.length);
+          }
+      }
+      return "";
+  }
+
+  var p_cookie=getCookie("_upcookie");
+  if (p_cookie == "") {
+      $('#js_barra_aceptacion_cookie').css({
+        display: 'block'
+      });
+   }
+  $('#js_btn_cookie').on('click', function(e) {
+    e.preventDefault();
+    p_cookie = '01luisrene';
+    if (p_cookie != "" && p_cookie != null) {
+      setCookie("_upcookie", p_cookie, 30);
+      $('#js_barra_aceptacion_cookie').css({
+        display: 'none'
+      });
+      console.log("cookie creada: " + p_cookie);
+     }
+  });
+}
+function progressReading() {
+  var getMax = function() {
+      return $(document).height() - $(window).height();
+  };
+  var getValue = function() {
+      return $(window).scrollTop();
+  };
+  var progressBar, max, value, width;
+  if('max' in document.createElement('progress')){
+      // Browser supports progress element
+      progressBar = $('progress');
+      // Set the Max attr for the first time
+      progressBar.attr({ max: getMax() });
+      $(document).on('scroll', function(){
+          // On scroll only Value attr needs to be calculated
+          progressBar.attr({ value: getValue() });
+      });
+      $(window).resize(function(){
+          // On resize, both Max/Value attr needs to be calculated
+          progressBar.attr({ max: getMax(), value: getValue() });
+      });
+  }        
 }
 $(document).ready(function() {
 	search();
 	closeSearch();
 	displayNav();
 	headroom();
+  buttonUp();
+	highlight();
+  cookiePolicy();
+  progressReading();
 });
