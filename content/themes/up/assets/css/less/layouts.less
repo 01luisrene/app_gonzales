@@ -482,15 +482,41 @@ aside.read-next{
 			margin-bottom: 1.5em;
 			height: 55px;
 			width: 100%;
+			&:invalid {
+			  border:thin solid #FC6E6E;
+			}
+
+			&:valid {
+				border:thin solid #119F2C;
+			}
+			&:focus{
+				outline: none;
+				border: thin solid @border-color-item;
+			}
 	}
 	.form-imput textarea{
 		height: 250px;
+	}
+	.btn-form{
+		background: @color-white;
+		border: thin solid @border-color-read-more;
+		.box-shadow(5px 5px 0px 0px @border-color-read-more);
+		padding: .7em 1em;
+		text-decoration: none;
+		transition: .500s;
+		width: 145px;
+		&:hover{
+			background-color: lighten(@border-color-read-more, 6%);
+			border: thin solid @color-white;
+			color: @color-white;
+			text-decoration: underline;
+		}
 	}
 }
 //pagination blog
 .pagination{
 	.flex-box-j-c(space-between);
-  margin-top: @espacio-em;
+  margin-top: @espacio-em + 1;
 	margin-bottom: @espacio-em - .5;
 	padding-top: @espacio-em;
 	padding-bottom: @espacio-em;

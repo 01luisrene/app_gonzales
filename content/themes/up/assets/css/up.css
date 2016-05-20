@@ -750,15 +750,45 @@ aside.read-next div {
   height: 55px;
   width: 100%;
 }
+.from-contact .form-imput input:invalid,
+.from-contact .form-imput textarea:invalid {
+  border: thin solid #FC6E6E;
+}
+.from-contact .form-imput input:valid,
+.from-contact .form-imput textarea:valid {
+  border: thin solid #119F2C;
+}
+.from-contact .form-imput input:focus,
+.from-contact .form-imput textarea:focus {
+  outline: none;
+  border: thin solid #006a93;
+}
 .from-contact .form-imput textarea {
   height: 250px;
+}
+.from-contact .btn-form {
+  background: #ffffff;
+  border: thin solid #1f4f89;
+  -webkit-box-shadow: 5px 5px 0px 0px #1f4f89;
+  -moz-box-shadow: 5px 5px 0px 0px #1f4f89;
+  box-shadow: 5px 5px 0px 0px #1f4f89;
+  padding: .7em 1em;
+  text-decoration: none;
+  transition: .500s;
+  width: 145px;
+}
+.from-contact .btn-form:hover {
+  background-color: #255da2;
+  border: thin solid #ffffff;
+  color: #ffffff;
+  text-decoration: underline;
 }
 .pagination {
   display: -webkit-flex;
   display: flex;
   -webkit-justify-content: space-between;
   justify-content: space-between;
-  margin-top: 2em;
+  margin-top: 3em;
   margin-bottom: 1.5em;
   padding-top: 2em;
   padding-bottom: 2em;
