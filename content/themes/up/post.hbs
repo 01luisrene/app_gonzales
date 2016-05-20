@@ -5,99 +5,93 @@
 
 {{! Everything inside the #post tags pulls data from the post }}
 {{#post}}
-
+{{!including presentation -> folder partials/presentation.hbs}}
 {{> "presentation"}}
 
-<main class="content layout-article box-inner" role="main">
-  <article class="{{post_class}}">
-  
-    <section class="post-content">
-      {{content}}
-      <div class="tag-links">
-        {{tags prefix=" on "}}
-      </div>
-    </section>
+  <div class="article-content box-inner">
+    <article class="{{post_class}}">
+      <section class="body-content js_reading_time">
+        {{!reading time and word count}}
+        <p><span class="reading-time"></span> (<span class="word-count"></span> words)</p>
 
-    <footer class="post-footer">
+        {{content}}
 
-    {{! Everything inside the #author tags pulls data from the author }}
-    {{#author}}
+        <div class="tag-links">
+          {{tags prefix=" Tagged in: " separator=" " limit="10"}}
+        </div>
+      </section>
 
-        {{#if image}}
-        <figure class="author-image">
-            <a class="img" href="{{url}}" style="background-image: url({{image}})"><span class="hidden">{{name}}'s Picture</span></a>
-        </figure>
-        {{/if}}
+      <div class="line"></div>
 
-        <section class="author">
-          <h4><a href="{{url}}">{{name}}</a></h4>
-
-          {{#if bio}}
-             <p>{{bio}}</p>
-          {{else}}
-            <p>Read <a href="{{url}}">more posts</a> by this author.</p>
+      <footer class="post-footer">
+        {{! Everything inside the #author tags pulls data from the author }}
+        {{#author}}
+          {{#if image}}
+          <figure class="author-image">
+              <a class="img" href="{{url}}" style="background-image: url({{image}})"><span class="hidden">{{name}}'s Picture</span></a>
+          </figure>
           {{/if}}
-          <div class="author-meta">
-            {{#if location}}<span class="author-location icon-location">{{location}}</span>{{/if}}
-            {{#if website}}<span class="author-link icon-link"><a href="{{website}}">{{website}}</a></span>{{/if}}
-          </div>
-        </section>
 
-    {{/author}}
+          <section class="author">
+            <h4><a href="{{url}}">{{name}}</a></h4>
 
-      <section class="share">
-          <h4>Share this post</h4>
-          <a class="icon-twitter" href="https://twitter.com/intent/tweet?text={{encode title}}&amp;url={{url absolute="true"}}"
-              onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
-              <span class="hidden">Twitter</span>
-          </a>
-          <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
-              onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
-              <span class="hidden">Facebook</span>
-          </a>
-          <a class="icon-google-plus" href="https://plus.google.com/share?url={{url absolute="true"}}"
-             onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
-              <span class="hidden">Google+</span>
-          </a>
-      </section>
-
-    </footer>
-
-
-<div class="box-inner">
+            {{#if bio}}
+                <p>{{bio}}</p>
+            {{else}}
+                <p>Read <a href="{{url}}">more posts</a> by this author.</p>
+            {{/if}}
+            <div class="author-meta">
+                {{#if location}}<span class="fa fa-map-marker" aria-hidden="true"> {{location}}</span>{{/if}}
+                &nbsp;&nbsp;&nbsp;
+                {{#if website}}<span class="fa fa-link" aria-hidden="true"> <a href="{{website}}">{{website}}</a></span>{{/if}}
+            </div>
+          </section>
+        {{/author}}
+          <section class="share">
+            <h4>Share this post</h4>
+            <a class="icon-share" href="https://twitter.com/intent/tweet?text={{encode title}}&amp;url={{url absolute="true"}}"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <span class="hidden">Twitter</span>
+                <i class="fa fa-twitter-square" aria-hidden="true"></i>
+            </a>
+            <a class="icon-share" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
+                onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                <span class="hidden">Facebook</span>
+                <i class="fa fa-facebook-official" aria-hidden="true"></i>
+            </a>
+            <a class="icon-share" href="https://plus.google.com/share?url={{url absolute="true"}}"
+               onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                <span class="hidden">Google+</span>
+                <i class="fa fa-google-plus-square" aria-hidden="true"></i>
+            </a>
+          </section>
+       </footer>
+    </article>
+  </div>
   <aside class="read-next">
-  {{#next_post}}
-  <a class="read-next-story {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}" href="{{url}}">
-      <section class="post">
-          <h2>{{title}}</h2>
-          <p>{{excerpt words="19"}}&hellip;</p>
-      </section>
-  </a>
-  {{/next_post}}
-  {{#prev_post}}
-  <a class="read-next-story prev {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}" href="{{url}}">
-      <section class="post">
-          <h2>{{title}}</h2>
-          <p>{{excerpt words="19"}}&hellip;</p>
-      </section>
-  </a>
-  {{/prev_post}}
-  </aside>
-</div>
-</article>
-<aside class="widget">
-  <p>
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  </p>
+    <div>
+    {{#next_post}}
+      <a class="read-next-story next {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}" href="{{url}}">
+          <section class="post">
+              <h2>{{title}}</h2>
+              <p>{{excerpt words="19"}}&hellip;</p>
+          </section>
+      </a>
+    {{/next_post}}
+    </div>
+    <div>
+    {{#prev_post}}
+      <a class="read-next-story prev {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}" href="{{url}}">
+          <section class="post">
+              <h2>{{title}}</h2>
+              <p>{{excerpt words="19"}}&hellip;</p>
+          </section>
+      </a>
+    {{/prev_post}}
+    </div>
 </aside>
 {{! progress reading }}
 <progress value="0" class="progress-reading"></progress>
-</main>
 {{else}}
   <p>No posts to display!</p>
 {{/post}}

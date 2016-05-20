@@ -10,16 +10,18 @@
   </span>
   <div class="box-images">
     {{#if image}}
-      <a href="{{url}}" title="{{{title}}}">
+      <a href="{{image}}" class="open-popup-link" title="{{{title}}}">
         <img src="{{image}}" alt="{{{title}}} - Picture">
       </a>
     {{else}}
-      <img src="{{asset "images/cover/default.png"}}" alt="{{{title}}} - Picture">
+      <a href="{{asset "images/cover/default.png"}}" class="open-popup-link" title="Image default">
+        <img src="{{asset "images/cover/default.png"}}">
+      </a>
     {{/if}}
     {{#if author.image}}
       {{#author}}
         <a href="{{url}}">
-          <img class="author-thumb" src="{{image}}" alt="{{name}}'s Picture" nopin="nopin" title="{{name}}"/>
+          <img class="author-thumb" src="{{image}}" alt="{{name}}'s Picture" nopin="nopin" title="Author: {{name}}"/>
         </a>
         <span class="author-name">{{name}}</span>
       {{/author}}
@@ -40,23 +42,25 @@
     </section>
   </div>
   <footer class="post-meta">
-    <a class="read-more" href="{{url}}">Read more <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>  
+    <a class="btn read-more" href="{{url}}">Read more <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>  
   </footer>
 </article>
 {{else}}
 <article class="{{post_class}}">
   <div class="box-images">
     {{#if image}}
-      <a href="{{url}}" title="{{{title}}}">
+      <a href="{{image}}" class="open-popup-link" title="{{{title}}}">
         <img src="{{image}}" alt="{{{title}}} - Picture">
       </a>
     {{else}}
-      <img src="{{asset "images/cover/default.png"}}" alt="{{{title}}} - Picture">
+      <a href="{{asset "images/cover/default.png"}}" class="open-popup-link" title="Image default">
+        <img src="{{asset "images/cover/default.png"}}">
+      </a>
     {{/if}}
     {{#if author.image}}
       {{#author}}
         <a href="{{url}}">
-          <img class="author-thumb" src="{{image}}" alt="{{name}}'s Picture" nopin="nopin" title="{{name}}"/>
+          <img class="author-thumb" src="{{image}}" alt="{{name}}'s Picture" nopin="nopin" title="Author: {{name}}"/>
         </a>
         <span class="author-name">{{name}}</span>
       {{/author}}
@@ -78,7 +82,7 @@
     </section>
   </div>
   <footer class="post-meta">
-    <a class="read-more" href="{{url}}">Read more <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>  
+    <a class="btn read-more" href="{{url}}">Read more <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>  
   </footer>
 </article>
 {{/if}}

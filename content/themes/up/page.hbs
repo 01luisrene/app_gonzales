@@ -5,14 +5,10 @@
 
 {{! Everything inside the #post tags pulls data from the page }}
 {{#post}}
-
 {{> "presentation"}}
-
-<main class="content box-inner" role="main">
-  <article class="{{post_class}}">
-    <section class="post-content">
+  <article class="{{post_class}} page-content box-inner">
+    <section class="body-content">
         {{content}}
     </section>
   </article>
-</main>
 {{/post}}

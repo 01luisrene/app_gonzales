@@ -1,27 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="es-pe">
 {{> "head" }}
-<body class="{{body_class}} nav-closed">
+<body class="{{body_class}}">
 {{! This message will be displayed if the browser is IE version 8 or less. }}
   <!--[if lt IE 9]>
   <div class="browser-old">
       <p class="browserupgrade">Está utilizando un navegador <strong>antiguo</strong>. Por favor <a href="http://browsehappy.com/">actualice su navegador</a> para mejorar su experiencia.</p>
   </div>
   <![endif]-->
-   {{navigation}}
-  <div class="site-wrapper">
+
+{{! navigation bar}}
+  {{navigation}}
+
+<main role="main">
   {{! Everything else gets inserted here }}
   {{{body}}}
+
   <footer class="site-footer">
     <div class="box-inner container-footer">
       {{! section for description of the blog }}
       <section class="description">
-        <h3>Blog description</h3>
+        <span class="title-footer">Blog description</span>
         <p>{{@blog.description}}</p> 
       </section>
       {{! section copyright and social networks }}
       <section class="copyright-and-social-networks">
-        <h3>{{@blog.title}}</h3>
+        <span class="title-footer">{{@blog.title}}</span>
         <p>&copy; {{date format="YYYY"}}</p>
 
       <div class="social-networks">
@@ -57,11 +61,11 @@
     <button id="js_btn_cookie" class="btn-cookie">Ok</button>
     </p>
   </div>
-  </div>
   {{! button up }}
   <a href="#" class="button-up" id="js_button_up">
     <i class="fa fa-angle-up" aria-hidden="true"></i>
   </a>
+  </main>
   {{> "scripts"}}
 </body>
 </html>

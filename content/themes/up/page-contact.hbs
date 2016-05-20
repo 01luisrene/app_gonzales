@@ -8,33 +8,30 @@
 
 {{> "presentation"}}
 
-<main class="content box-inner" role="main">
-  <article class="{{post_class}}">
-
-    <section class="post-content">
+  <article class="{{post_class}} page-content box-inner">
+    <section class="body-content">
         {{content}}
     </section>
-    <section>
-      <form class="formulario-contacto" action="//formspree.io/01luisrene@gmail.com" method="POST" id="js_formulario_contacto">
-        <h3 class="sub-title-contacto">Formulario de contacto</h3>
+    <section class="from-contact">
+
+      <h3 class="title-contacto">From Contact</h3>
+
+      <form class="form-contact" action="//formspree.io/01luisrene@gmail.com" method="POST">
         <!-- DO NOT EDIT BELOW THIS LINE -->
-        <input type="hidden" name="_subject" value="Mensaje de {{site.url}}" />
+        <input type="hidden" name="_subject" value="Message of {{@blog.url}}" />
         <input type="text" name="_gotcha" style="display:none" />
-        <input type="hidden" name="_next" value="{{site.url}}/thanks/" />
+        <input type="hidden" name="_next" value="{{@blog.url}}/thanks/" />
         <div class="form-imput">
-          <input type="text" name="name" placeholder="Nombre completo" required></input>
+          <input type="text" name="name" placeholder="Name complete" required></input>
         </div>
         <div class="form-imput"> 
-          <input type="email" name="email" placeholder="Correo electrónico" required></input>
+          <input type="email" name="email" placeholder="Email" required></input>
         </div>
         <div class="form-imput">
-          <textarea name="message" id="" cols="30" rows="3" placeholder="Escribe tu mensaje :)" required></textarea>
+          <textarea name="message" id="" cols="30" rows="3" placeholder="Write you message :)" required></textarea>
         </div>
-        <div class="form-imput">
-          <input class="btn btn-form" type="submit" value="Enviar mensaje"></input>
-        </div>
+          <input class="btn-form" type="submit" value="Send message"></input>
       </form>
     </section>
   </article>
-</main>
 {{/post}}

@@ -40,7 +40,7 @@ function displayNav(){
 }
 function headroom(){
   $(".headroom").headroom({
-    "offset": 100,
+    "offset": 205,
     "tolerance": 5,
     "classes": {
       "initial": "animated",
@@ -132,6 +132,37 @@ function progressReading() {
       });
   }        
 }
+function readingTime(){
+  var $article = $('.js_reading_time');
+  $article.readingTime({
+    readingTimeTarget: $article.find('.reading-time'),
+    wordCountTarget: $article.find('.word-count'),
+    wordsPerMinute: 275,
+    round: false,
+    lang: 'es',
+    success: function() {
+        console.log('It worked!');
+    },
+    error: function(message) {
+        console.log(message);
+        $article.find('.reading-time').remove();
+    }
+  });
+}
+function magnificPopup(){ 
+  $('.open-popup-link').magnificPopup({
+    type: 'image',
+    closeBtnInside: false,
+    closeOnContentClick: true,
+
+    image: {
+      verticalFit: true,
+      titleSrc: function(item) {
+        return item.el.attr('title') + ' &#8212; <a class="image-source-link" href="'+item.src+'" target="_blank">open original</a>';
+      }
+    }
+  });
+  }
 $(document).ready(function() {
 	search();
 	closeSearch();
@@ -141,4 +172,6 @@ $(document).ready(function() {
 	highlight();
   cookiePolicy();
   progressReading();
+  readingTime();
+  magnificPopup();
 });

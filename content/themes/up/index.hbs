@@ -1,12 +1,11 @@
 {{!< default}}
 {{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
 
+{{!including presentation -> folder partials/presentation.hbs}}
 {{> "presentation"}}
 
 {{! The main content area on the homepage }}
-<main id="content" class="loop-content box-inner" role="main">
-
-    {{! The tag below includes the post loop - partials/loop.hbs }}
-    {{> "loop"}}
-
-</main>
+<section id="content" class="content___loop box-inner">
+  {{! The tag below includes the post loop -> folder partials/loop.hbs }}
+  {{> "loop"}}
+</section>

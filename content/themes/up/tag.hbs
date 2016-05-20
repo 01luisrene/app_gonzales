@@ -3,6 +3,8 @@
 
 {{! If we have a tag cover, display that - else blog cover - else nothing }}
 <section class="presentation-section tag-head {{#if tag.image}}" style="background-image: url({{tag.image}}){{else}}{{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}{{/if}}">
+  {{!including search form -> folder partials/search.hbs}}
+  {{> "search"}}
   <div class="vertical box-inner">
     <div class="presentation-content">
       <h1 class="post-title">{{tag.name}}</h1>
@@ -16,13 +18,12 @@
       </p>
     </div>
   </div>
-  {{> "search"}}
 </section>
 
 {{! The main content area on the homepage }}
-<main class="loop-content box-inner" role="main">
+<section class="content___loop box-inner">
 
     {{! The tag below includes the post loop - partials/loop.hbs }}
     {{> "loop"}}
 
-</main>
+</section>
