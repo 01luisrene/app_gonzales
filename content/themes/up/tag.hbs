@@ -5,8 +5,7 @@
 <section class="presentation-section tag-head {{#if tag.image}}" style="background-image: url({{tag.image}}){{else}}{{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}{{/if}}">
   {{!including search form -> folder partials/search.hbs}}
   {{> "search"}}
-  <div class="vertical box-inner">
-    <div class="presentation-content">
+    <div class="presentation-content box-inner">
       <h1 class="post-title">{{tag.name}}</h1>
       <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}"><i class="fa fa-calendar-o" aria-hidden="true"></i> {{date format="DD MMMM YYYY"}}</time>
       <p class="page-description">
@@ -17,7 +16,6 @@
         {{/if}}
       </p>
     </div>
-  </div>
 </section>
 
 {{! The main content area on the homepage }}
