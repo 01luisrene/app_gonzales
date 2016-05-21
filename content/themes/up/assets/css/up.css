@@ -58,6 +58,7 @@ a:visited {
 }
 p {
   font-size: 17px;
+  line-height: 30px;
 }
 blockquote {
   border-left: 4px solid #191919;
@@ -70,12 +71,11 @@ blockquote {
 }
 pre,
 code {
-  background-color: #F5F7F8;
-  font-size: 18px;
-  line-height: 1.5em;
+  background-color: #eef;
+  font-size: 1em;
+  line-height: 1.8em;
   border: 1px solid #f8f8f8;
   border-radius: 3px;
-  background-color: #eef;
 }
 code {
   color: #c25;
@@ -91,8 +91,7 @@ pre {
 pre > code {
   border: 0;
   color: inherit;
-  padding-right: 0;
-  padding-left: 0;
+  padding: 1em !important;
 }
 progress {
   -webkit-appearance: none;
@@ -572,10 +571,18 @@ progress::-webkit-progress-value {
   background-color: #ffffff;
   margin-top: 2em;
   margin-bottom: 2em;
+  padding-top: 15px;
+  padding-bottom: 15px;
   max-width: 900px;
 }
-.body-content p {
-  line-height: 30px;
+.body-content p:first-child,
+.body-content h1:first-child,
+.body-content h2:first-child,
+.body-content h3:first-child,
+.body-content h4:first-child,
+.body-content h5:first-child,
+.body-content h6:first-child {
+  margin-top: 0;
 }
 .article-content .line {
   margin: 1.5em 0;
@@ -661,6 +668,7 @@ aside.read-next {
   -webkit-justify-content: space-between;
   justify-content: space-between;
   max-width: 930px;
+  margin-bottom: 2em;
 }
 aside.read-next div {
   width: 100%;
@@ -1140,9 +1148,6 @@ fieldset[disabled] a.btn {
 }
 /*================DESKTOP====================*/
 @media (min-width: 1200px) {
-  body {
-    color: orange;
-  }
   .presentation-section {
     background-attachment: fixed;
   }
