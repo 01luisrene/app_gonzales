@@ -24,7 +24,7 @@ h6 {
 h1 {
   font-size: 4em;
   line-height: 1.2em;
-  margin: 0.67em 0 0 0;
+  margin: .4em 0 0 0;
 }
 h2 {
   font-size: 3em;
@@ -56,6 +56,9 @@ a:hover {
 a:visited {
   color: #1d5669;
 }
+p {
+  font-size: 17px;
+}
 blockquote {
   border-left: 4px solid #191919;
   color: #787878;
@@ -68,7 +71,8 @@ blockquote {
 pre,
 code {
   background-color: #F5F7F8;
-  font-size: 15px;
+  font-size: 18px;
+  line-height: 1.5em;
   border: 1px solid #f8f8f8;
   border-radius: 3px;
   background-color: #eef;
@@ -78,8 +82,8 @@ code {
   padding: 1px 5px;
   vertical-align: middle;
   white-space: pre-wrap;
-  font-size: 0.8em;
-  line-height: 1em;
+  font-size: 1em;
+  line-height: 1.2em;
 }
 pre {
   overflow-x: auto;
@@ -421,10 +425,14 @@ progress::-webkit-progress-value {
 }
 /*container of the title, description and date*/
 .presentation-content {
-  display: table-cell;
-  vertical-align: middle;
+  background-color: rgba(255, 255, 255, 0.5);
+  display: block;
   text-align: center;
-  width: 100%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  padding: 15px;
 }
 .presentation-content .page-title,
 .presentation-content .post-title {
@@ -440,12 +448,6 @@ progress::-webkit-progress-value {
   line-height: 1.2em;
   margin-top: 1em;
   margin-bottom: 1em;
-}
-.presentation-content .page-description {
-  background-color: rgba(255, 255, 255, 0.3);
-  margin-left: 10%;
-  margin-right: 10%;
-  padding: 10px;
 }
 .no-cover {
   background: #a5ccfb;
@@ -567,6 +569,7 @@ progress::-webkit-progress-value {
 /*styles for post and page*/
 .page-content,
 .article-content {
+  background-color: #ffffff;
   margin-top: 2em;
   margin-bottom: 2em;
   max-width: 900px;
@@ -574,8 +577,15 @@ progress::-webkit-progress-value {
 .body-content p {
   line-height: 30px;
 }
-.article .line {
+.article-content .line {
   margin: 1.5em 0;
+}
+.article-content .time-reading {
+  color: #EC4040;
+  font-size: 1.4em;
+  border-bottom: 3px solid #006a93;
+  padding-top: 15px;
+  padding-bottom: 10px;
 }
 /*tags*/
 .tag-links a {
@@ -650,6 +660,7 @@ aside.read-next {
   display: flex;
   -webkit-justify-content: space-between;
   justify-content: space-between;
+  max-width: 930px;
 }
 aside.read-next div {
   width: 100%;
@@ -663,7 +674,7 @@ aside.read-next div {
   color: #191919;
   text-decoration: none;
   position: relative;
-  height: 350px;
+  height: 300px;
   width: 100%;
 }
 .read-next-story .post {
@@ -673,7 +684,7 @@ aside.read-next div {
   padding-top: 1em;
   padding-bottom: 1em;
   transition: 1.5s;
-  height: 350px;
+  height: 300px;
   width: 100%;
 }
 .read-next-story .post:hover {
@@ -1101,6 +1112,32 @@ fieldset[disabled] a.btn {
   font-size: .7em;
   font-weight: 700;
 }
+.embed-responsive {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.embed-responsive .embed-responsive-item,
+.embed-responsive iframe,
+.embed-responsive embed,
+.embed-responsive object,
+.embed-responsive video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  border: 0;
+}
+.embed-responsive-16by9 {
+  padding-bottom: 56.25%;
+}
+.embed-responsive-4by3 {
+  padding-bottom: 75%;
+}
 /*================DESKTOP====================*/
 @media (min-width: 1200px) {
   body {
@@ -1126,6 +1163,11 @@ fieldset[disabled] a.btn {
   .content___loop .post .post-title {
     font-size: 1.5em;
     line-height: 1.2em;
+  }
+  /**********************************END*******************************************/
+  /*styles for presentation*/
+  .presentation-section {
+    min-height: 400px;
   }
 }
 /*================TABLETS====================*/
@@ -1202,6 +1244,11 @@ fieldset[disabled] a.btn {
   /*styles for presentation*/
   .presentation-section {
     min-height: 350px;
+  }
+  .presentation-content {
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
   }
   /**********************************END*******************************************/
   /*styles for search list*/
@@ -1333,12 +1380,13 @@ fieldset[disabled] a.btn {
   }
   /**********************************END*******************************************/
   /*styles for presentation*/
-  .presentation-content {
-    min-height: 350px;
+  .presentation-section {
+    min-height: 300px;
   }
-  .presentation-content .page-description {
+  .presentation-content {
     margin-left: 0;
     margin-right: 0;
+    width: 100%;
   }
   .form-search input[type="text"] {
     width: 100%;
@@ -1439,7 +1487,7 @@ fieldset[disabled] a.btn {
   /**********************************END*******************************************/
   /*styles for presentation*/
   .presentation-section {
-    min-height: 300px;
+    min-height: 350px;
   }
   /**********************************END*******************************************/
   /*loop styles*/

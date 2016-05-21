@@ -199,10 +199,14 @@
 
 /*container of the title, description and date*/
 .presentation-content{
-	display: table-cell;
-  vertical-align: middle;
+	background-color: @bg-presentation-content;
+	display: block;
 	text-align: center;
-	width: 100%;
+	margin-left: 10%;
+	margin-right: 10%;
+	margin-top: 2em;
+	margin-bottom: 2em;
+	padding: 15px;
 	.page-title, .post-title{
 		text-shadow: 4px 2px 1px rgba(255, 255, 255, 1);
 	}
@@ -215,12 +219,6 @@
 		line-height: 1.2em;
 		margin-top: 1em;
 		margin-bottom: 1em;
-	}
-	.page-description{
-		background-color: @bg-page-description;
-		margin-left: 10%;
-		margin-right: 10%;
-		padding: 10px;
 	}
 }
 .no-cover{
@@ -333,6 +331,7 @@
 }
 /*styles for post and page*/
 .page-content, .article-content{
+	background-color: @color-white;
 	margin-top: @espacio-em;
 	margin-bottom: @espacio-em;
 	max-width: @max-width;
@@ -340,9 +339,16 @@
 .body-content{
 	.format-body-post-page();
 }
-.article{
+.article-content{
 	.line{
 		margin: (@espacio-em - .5) 0;
+	}
+	.time-reading{
+		color: #EC4040;
+		font-size: 1.4em;
+		border-bottom: 3px solid @border-color-item;
+		padding-top: 15px;
+		padding-bottom: 10px;
 	}
 }
 /*tags*/
@@ -394,6 +400,7 @@
 }
 aside.read-next{
 	.flex-box-j-c(space-between);
+	max-width: @max-width + 30;
 	div{
 		width: 100%;
 	}
@@ -407,7 +414,7 @@ aside.read-next{
 	color: @color-black;
 	text-decoration: none;
 	position: relative;
-	height: 350px;
+	height: 300px;
 	width: 100%;
 	.post{
 		display: table-cell;
@@ -416,7 +423,7 @@ aside.read-next{
 		padding-top: 1em;
 		padding-bottom: 1em;
 		transition: 1.5s;
-		height: 350px;
+		height: 300px;
 		width: 100%;
 		&:hover{
 			background-color: rgba(255, 255, 255, 0.6);

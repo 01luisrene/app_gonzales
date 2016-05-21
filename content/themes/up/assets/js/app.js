@@ -138,7 +138,7 @@ function readingTime(){
     readingTimeTarget: $article.find('.reading-time'),
     wordCountTarget: $article.find('.word-count'),
     wordsPerMinute: 275,
-    round: false,
+    round: true,
     lang: 'es',
     success: function() {
         console.log('It worked!');

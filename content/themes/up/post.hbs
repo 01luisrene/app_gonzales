@@ -12,7 +12,7 @@
     <article class="{{post_class}}">
       <section class="body-content js_reading_time">
         {{!reading time and word count}}
-        <p><span class="reading-time"></span> (<span class="word-count"></span> words)</p>
+        <p class="time-reading">Estimated reading time : <span class="reading-time"></span> (<span class="word-count"></span> words)</p>
 
         {{content}}
 
@@ -68,7 +68,7 @@
        </footer>
     </article>
   </div>
-  <aside class="read-next">
+  <aside class="read-next box-inner">
     <div>
     {{#next_post}}
       <a class="read-next-story next {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}" href="{{url}}">
