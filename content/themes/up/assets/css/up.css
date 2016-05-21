@@ -575,14 +575,12 @@ progress::-webkit-progress-value {
   padding-bottom: 15px;
   max-width: 900px;
 }
-.body-content p:first-child,
-.body-content h1:first-child,
-.body-content h2:first-child,
-.body-content h3:first-child,
-.body-content h4:first-child,
-.body-content h5:first-child,
-.body-content h6:first-child {
+.body-content *:first-child {
   margin-top: 0;
+}
+.body-content img {
+  display: block;
+  margin: .5em auto;
 }
 .article-content .line {
   margin: 1.5em 0;
