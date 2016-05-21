@@ -61,7 +61,7 @@ p {
   line-height: 30px;
 }
 blockquote {
-  border-left: 4px solid #191919;
+  border-left: 4px solid #006a93;
   color: #787878;
   padding-left: 16px;
   margin: 0 0 0 1em;
@@ -589,7 +589,6 @@ progress::-webkit-progress-value {
   color: #EC4040;
   font-size: 1.4em;
   border-bottom: 3px solid #006a93;
-  padding-top: 15px;
   padding-bottom: 10px;
 }
 /*tags*/
@@ -669,7 +668,11 @@ aside.read-next {
   margin-bottom: 2em;
 }
 aside.read-next div {
-  width: 100%;
+  width: 49%;
+}
+aside.read-next .no-cover .post {
+  display: inline-block;
+  padding-top: 5em;
 }
 .read-next-story {
   display: block;
@@ -691,7 +694,7 @@ aside.read-next div {
   padding-bottom: 1em;
   transition: 1.5s;
   height: 300px;
-  width: 100%;
+  min-width: 100%;
 }
 .read-next-story .post:hover {
   background-color: rgba(255, 255, 255, 0.6);

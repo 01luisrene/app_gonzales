@@ -349,7 +349,6 @@
 		color: #EC4040;
 		font-size: 1.4em;
 		border-bottom: 3px solid @border-color-item;
-		padding-top: 15px;
 		padding-bottom: 10px;
 	}
 }
@@ -405,7 +404,13 @@ aside.read-next{
 	max-width: @max-width + 30;
 	margin-bottom: @espacio-em;
 	div{
-		width: 100%;
+		width: 49%;
+	}
+	.no-cover{
+		.post{
+			display: inline-block;
+			padding-top: 5em;
+		}
 	}
 }
 .read-next-story{
@@ -427,7 +432,7 @@ aside.read-next{
 		padding-bottom: 1em;
 		transition: 1.5s;
 		height: 300px;
-		width: 100%;
+		min-width: 100%;
 		&:hover{
 			background-color: rgba(255, 255, 255, 0.6);
 			border: 1em solid rgba(0, 0, 0, 0.6);
