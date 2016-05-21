@@ -1,13 +1,17 @@
 <nav class="pagination" role="navigation">
 	<div class="box-newer-posts">
 	  {{#if prev}}
-	      <a class="btn newer-posts" href="{{page_url prev}}">&larr; Newer Posts</a>
+	    <a class="btn newer-posts" href="{{page_url prev}}">&larr; Newer Posts</a>
+	  {{else}}
+	  	<a class="btn newer-posts" href="javascript:void(0)" disabled>&larr; Newer Posts</a>
 	  {{/if}}
 	</div>
   <span class="page-number">Page {{page}} of {{pages}}</span>
   <div class="box-older-posts">
 	  {{#if next}}
-	      <a class="btn older-posts" href="{{page_url next}}">Older Posts &rarr;</a>
+	    <a class="btn older-posts" href="{{page_url next}}">Older Posts &rarr;</a>
+	  {{else}}
+	  	<a class="btn older-posts" href="javascript:void(0))" disabled>Older Posts &rarr;</a>
 	  {{/if}}
   </div>
 </nav>
