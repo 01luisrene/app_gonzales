@@ -17,7 +17,6 @@ h3,
 h4,
 h5,
 h6 {
-  display: inline-block;
   color: #000017;
   font-family: 'Montserrat', sans-serif;
   margin: .4em 0;
@@ -588,6 +587,7 @@ progress::-webkit-progress-value {
 .body-content h4,
 .body-content h5,
 .body-content h6 {
+  display: inline-block;
   position: relative;
 }
 .body-content h1::before,
