@@ -54,9 +54,19 @@
                 <p>Read <a href="{{url}}">more posts</a> by this author.</p>
             {{/if}}
             <div class="author-meta">
-                {{#if location}}<span class="fa fa-map-marker" aria-hidden="true"> {{location}}</span>{{/if}}
+                {{#if location}}
+                  <i class="fa author-location fa-map-marker" aria-hidden="true"></i>
+                  <span class="author-location">
+                    {{location}}
+                  </span>
+                {{/if}}
                 &nbsp;&nbsp;&nbsp;
-                {{#if website}}<span class="fa fa-link" aria-hidden="true"> <a href="{{website}}">{{website}}</a></span>{{/if}}
+                {{#if website}}
+                  <i class="fa author-link fa-link" aria-hidden="true"></i>
+                  <span class="author-link" aria-hidden="true">
+                    <a href="{{website}}">{{website}}</a>
+                  </span>
+                {{/if}}
             </div>
           </section>
         {{/author}}
@@ -117,6 +127,8 @@
     {{/prev_post}}
     </div>
 </aside>
+<div class="box-disqus box-inner" id="disqus_thread"></div>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 {{! progress reading }}
 <progress value="0" class="progress-reading"></progress>
 {{else}}

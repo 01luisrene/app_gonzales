@@ -624,6 +624,12 @@ progress::-webkit-progress-value {
   border-bottom: 3px solid #006a93;
   padding-bottom: 10px;
 }
+.box-disqus {
+  max-width: 900px;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin-bottom: 2em;
+}
 /*tags*/
 .tag-links a {
   background: #44BBF3;
@@ -799,6 +805,7 @@ aside.read-next .no-cover .post {
   font-size: 1.2em;
   padding: .5em;
   margin-bottom: 1.5em;
+  resize: vertical;
   height: 55px;
   width: 100%;
 }
@@ -938,9 +945,6 @@ aside.read-next .no-cover .post {
   text-align: center;
   font-size: 1.5em;
 }
-.author-template .author-meta span {
-  margin-left: .7em;
-}
 .site-footer {
   background: #0f0f0f;
   color: #ffffff;
@@ -1069,8 +1073,7 @@ aside.read-next .no-cover .post {
   font-size: 2.5em;
   padding: 0 7px;
 }
-.box-inner,
-.layout-post {
+.box-inner {
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
@@ -1091,6 +1094,11 @@ aside.read-next .no-cover .post {
   margin: 5px 0;
   height: 2px;
   width: 100%;
+}
+.author-location,
+.author-link,
+.author-stats {
+  font-style: italic;
 }
 .btn {
   display: inline-block;
