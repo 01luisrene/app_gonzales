@@ -1,19 +1,18 @@
-<section class="presentation-section{{#is "index, home"}}{{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}} no-cover{{/if}}{{else}} {{#if image}}" style="background-image: url({{image}}){{else}} no-cover{{/if}}{{/is}}">
+<section class="presentation-section{{#is "index"}}{{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}} no-cover{{/if}}{{else}} {{#if image}}" style="background-image: url({{image}}){{else}} no-cover{{/if}}{{/is}}">
 
   {{!including search form -> folder partials/search.hbs}}
   {{> "search"}}
   <div class=" box-inner">
+  {{#is "index"}}
     <section class="presentation-content">
-      {{#is "index, home"}}
-        <h1 class="page-title">{{@blog.title}}</h1>
-        <p class="page-description">{{@blog.description}}</p>
-      {{else}}
-        <h1 class="post-title">{{title}}</h1>
-        <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">
-          <i class="fa fa-calendar-o" aria-hidden="true"></i> {{date format="DD MMMM YYYY"}}
-        </time>
-      {{/is}}
+      <h1 class="page-title">{{@blog.title}}</h1>
+      <p class="page-description">{{@blog.description}}</p>
     </section>
-
+  {{else}}
+    <section class="presentation-content">
+      <h1 class="post-title">{{title}}</h1>
+      <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}"><i class="fa fa-calendar-o" aria-hidden="true"></i> {{date format="DD MMMM YYYY"}}</time>
+    </section>
+  {{/is}}
   </div>
 </section>

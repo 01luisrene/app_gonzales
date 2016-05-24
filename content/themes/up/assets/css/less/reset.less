@@ -14,7 +14,6 @@ h1{
   text-transform: uppercase;
 }
 h1,h2,h3,h4,h5,h6{
-  display: inline-block;
   color: @color-titles;
   font-family: @font-family-montserrat;
   margin: .4em 0;
@@ -62,13 +61,12 @@ code {
     border-radius: 3px;
 }
 code {
-    display: inline-block;
 		color: #c25;
     padding: 1px 5px;
     vertical-align: middle;
     white-space: pre-wrap;
     font-size: 1em;
-    line-height: 1.5em;
+    line-height: 1.2em;
 }
 
 pre {
@@ -76,7 +74,7 @@ pre {
     > code {
         border: 0;
         color: inherit;
-        padding: 1em;
+        padding: 1em !important;
     }
 }
 progress {

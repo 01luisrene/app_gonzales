@@ -162,10 +162,7 @@ function magnificPopup(){
       }
     }
   });
-}
-function formContact(){
-
-}
+  }
 $(document).ready(function() {
 	search();
 	closeSearch();
@@ -177,5 +174,4 @@ $(document).ready(function() {
   progressReading();
   readingTime();
   magnificPopup();
-  formContact();
 });
