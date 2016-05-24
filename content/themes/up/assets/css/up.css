@@ -610,7 +610,7 @@ progress::-webkit-progress-value {
 .article-content .body-content p::first-letter {
   text-transform: uppercase;
 }
-.article-content .body-content p:nth-child(2)::first-letter {
+.article-content .body-content p:nth-child(3)::first-letter {
   font-size: 1.8em;
   font-weight: 700;
   text-transform: uppercase;
@@ -626,8 +626,6 @@ progress::-webkit-progress-value {
 }
 .box-disqus {
   max-width: 900px;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
   margin-bottom: 2em;
 }
 /*tags*/
@@ -703,11 +701,7 @@ aside.read-next {
   display: flex;
   -webkit-justify-content: space-between;
   justify-content: space-between;
-  max-width: 930px;
   margin-bottom: 2em;
-}
-aside.read-next div {
-  width: 49%;
 }
 aside.read-next .no-cover .post {
   display: inline-block;
@@ -722,7 +716,7 @@ aside.read-next .no-cover .post {
   color: #191919;
   text-decoration: none;
   position: relative;
-  width: 100%;
+  width: 49%;
 }
 .read-next-story .post {
   display: inline-block;
@@ -1470,7 +1464,7 @@ fieldset[disabled] a.btn {
     -webkit-justify-content: inherit;
     justify-content: inherit;
   }
-  aside.read-next div {
+  aside.read-next .read-next-story {
     width: 100%;
   }
   .read-next-story .post {
