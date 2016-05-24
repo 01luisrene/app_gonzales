@@ -13,16 +13,24 @@
       <section class="body-content js_reading_time">
         {{!reading time and word count}}
         <p class="time-reading">
-          Read time: 
-          <i class="fa fa-clock-o" aria-hidden="true"></i> 
+          Read time:
+          <i class="fa fa-clock-o" aria-hidden="true"></i>
           <span class="reading-time"></span> 
           (<span class="word-count"></span> words)
+
+          <!--Quitar el links de los tags-->
+
+          {{#if tags}}
+           &nbsp;&nbsp;|&nbsp;&nbsp
+            <i class="fa fa-tags" aria-hidden="true"></i> 
+            {{tags prefix=" Labels: " separator=", " limit="3" autolink="false"}}
+          {{/if}}
         </p>
 
         {{content}}
 
         <div class="tag-links">
-          {{tags prefix=" Tagged in: " separator=" " limit="10"}}
+          {{tags prefix=" Tagged in: " separator=" " limit="7"}}
         </div>
       </section>
 
@@ -79,11 +87,11 @@
       <a class="read-next-story next {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}" href="{{url}}">
           <section class="post">
               <h2>{{title}}</h2>
-              <p>{{excerpt words="19"}}&hellip;</p>
+              <p>{{excerpt words="10"}}&hellip;</p>
           </section>
       </a>
     {{else}}
-      <a href="javascript:void(0))" class="read-next-story next no-cover" style="background-image: url({{asset "images/cover/cover_default_next-prev.jpg"}})">
+      <a href="javascript:void(0))" class="read-next-story next no-cover" style="background-image: url({{asset "images/cover/cover_default.jpg"}})">
         <section class="post">
             <button class="btn">Previus post</button>
             <p>No more posts</p>
@@ -96,11 +104,11 @@
       <a class="read-next-story prev {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}" href="{{url}}">
           <section class="post">
               <h2>{{title}}</h2>
-              <p>{{excerpt words="19"}}&hellip;</p>
+              <p>{{excerpt words="10"}}&hellip;</p>
           </section>
       </a>
     {{else}}
-      <a href="javascript:void(0))" class="read-next-story prev no-cover" style="background-image: url({{asset "images/cover/cover_default_next-prev.jpg"}})">
+      <a href="javascript:void(0))" class="read-next-story prev no-cover" style="background-image: url({{asset "images/cover/cover_default.jpg"}})">
         <section class="post">
             <button class="btn">Next post</button>
             <p>No more posts</p>
