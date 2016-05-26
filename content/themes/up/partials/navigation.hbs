@@ -20,7 +20,11 @@
 	{{! blog pages list }}
 	<ul class="nav-menu" id="js_nav_menu">
 		{{#foreach navigation}}
-		  <li class="nav-menu-item {{slug}} {{#if current}} item-current{{/if}}" role="presentation"><a href="{{url absolute="true"}}">{{label}}</a></li>
+		{{#if current}}
+			<li class="nav-menu-item item-current {{slug}}" role="presentation"><span title="{{label}}">{{label}}</span></li>
+		{{else}}
+		  <li class="nav-menu-item {{slug}}" role="presentation"><a href="{{url absolute="true"}}" title="{{label}}">{{label}}</a></li>
+		{{/if}}		
 		{{/foreach}}
 	</ul>
 	</div>

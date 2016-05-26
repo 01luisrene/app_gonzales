@@ -1,4 +1,4 @@
-/*resetting tags for the theme up*/
+/*resetting tags HTML for the theme up*/
 * {
   box-sizing: border-box;
 }
@@ -285,6 +285,14 @@ progress::-webkit-progress-value {
 }
 .nav-menu .nav-menu-item:last-child {
   margin-right: 0;
+}
+.nav-menu .nav-menu-item span {
+  display: inline-block;
+  color: #ffffff;
+  cursor: default;
+  line-height: 18px;
+  padding: .65em 1em;
+  text-transform: uppercase;
 }
 .nav-menu .nav-menu-item a {
   color: #010210;
