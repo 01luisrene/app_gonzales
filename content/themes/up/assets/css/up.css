@@ -638,15 +638,22 @@ progress::-webkit-progress-value {
 }
 /*tags*/
 .tag-links a {
-  background: #44BBF3;
+  background: #40bee8;
   border-radius: 3px;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   -o-border-radius: 3px;
   -ms-border-radius: 3px;
+  color: #191919;
   display: inline-block;
+  font-weight: 700;
   margin-bottom: 10px;
   padding: 3px 10px;
+  text-decoration: none;
+}
+.tag-links a:hover {
+  color: #3f3f3f;
+  text-decoration: underline;
 }
 .post-footer {
   display: -webkit-flex;
@@ -786,8 +793,12 @@ aside.read-next .no-cover .post {
 }
 /*contact from*/
 .from-contact {
+  background: #e8e4e4;
   display: block;
-  width: 100%;
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-bottom: -15px;
+  padding: 0 15px 15px 15px;
 }
 .from-contact .title-contacto {
   display: inline-block;
@@ -801,28 +812,22 @@ aside.read-next .no-cover .post {
   bottom: -0.2em;
   width: 25%;
 }
+.from-contact .form-imput {
+  margin-bottom: 1.5em;
+}
 .from-contact .form-imput input,
 .from-contact .form-imput textarea {
-  border: thin solid #191919;
+  border: 3px solid #006a93;
   font-size: 1.2em;
   padding: .5em;
-  margin-bottom: 1.5em;
   resize: vertical;
   height: 55px;
   width: 100%;
 }
-.from-contact .form-imput input:invalid,
-.from-contact .form-imput textarea:invalid {
-  border: thin solid #FC6E6E;
-}
-.from-contact .form-imput input:valid,
-.from-contact .form-imput textarea:valid {
-  border: thin solid #07701B;
-}
 .from-contact .form-imput input:focus,
 .from-contact .form-imput textarea:focus {
   outline: none;
-  border: thin solid #006a93;
+  border: 3px solid #0075a2;
 }
 .from-contact .form-imput textarea {
   height: 250px;
@@ -843,6 +848,11 @@ aside.read-next .no-cover .post {
   border: thin solid #ffffff;
   color: #ffffff;
   text-decoration: underline;
+}
+.from-contact .e-form {
+  display: block;
+  color: #FC6E6E;
+  margin-top: .5em;
 }
 .pagination {
   display: -webkit-flex;

@@ -95,13 +95,12 @@
     <a class="read-next-story next {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}" href="{{url}}">
         <section class="post">
             <h2>{{title}}</h2>
-            <p>{{excerpt words="10"}}&hellip;</p>
+            <p>{{excerpt words="15"}}&hellip;</p>
         </section>
     </a>
   {{else}}
     <a href="javascript:void(0))" class="read-next-story next no-cover" style="background-image: url({{asset "images/cover/cover_default.jpg"}})">
       <section class="post">
-          <button class="btn">Previus post</button>
           <p>No more posts</p>
       </section>
     </a>
@@ -110,13 +109,12 @@
     <a class="read-next-story prev {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}" href="{{url}}">
         <section class="post">
             <h2>{{title}}</h2>
-            <p>{{excerpt words="10"}}&hellip;</p>
+            <p>{{excerpt words="15"}}&hellip;</p>
         </section>
     </a>
   {{else}}
     <a href="javascript:void(0))" class="read-next-story prev no-cover" style="background-image: url({{asset "images/cover/cover_default.jpg"}})">
       <section class="post">
-          <button class="btn">Next post</button>
           <p>No more posts</p>
       </section>
     </a>

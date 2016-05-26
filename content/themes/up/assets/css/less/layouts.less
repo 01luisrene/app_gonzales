@@ -382,11 +382,18 @@
 /*tags*/
 .tag-links{
 	a{
-		background: #44BBF3;
+		background: @bg-tags-link;
 		.border-radius(3px);
+		color: @color-black;
 		display: inline-block;
+		font-weight: 700;
 		margin-bottom: 10px;
 		padding: 3px 10px;
+		text-decoration: none;
+		&:hover{
+			color: lighten(@color-black, 15%);
+			text-decoration: underline;
+		}
 	}
 }
 .post-footer{
@@ -503,8 +510,12 @@ aside.read-next{
 //********************************END********************************
 /*contact from*/
 .from-contact{
+	background: darken(@bg-body, 5%);
 	display: block;
-	width: 100%;
+	margin-left: -15px;
+	margin-right: -15px;
+	margin-bottom: -15px;
+	padding: 0 15px 15px 15px;
 	.title-contacto{
 		display: inline-block;
 		position: relative;
@@ -512,24 +523,19 @@ aside.read-next{
 
 		.title-underlining(@color-titles, -.2em);
 	}
+	.form-imput{
+		margin-bottom: 1.5em;
+	}
 	.form-imput input, .form-imput textarea{
-			border:thin solid @color-black;
+			border:3px solid @border-color-item;
 			font-size: 1.2em;
 			padding: .5em;
-			margin-bottom: 1.5em;
 			resize: vertical;
 			height: 55px;
 			width: 100%;
-			&:invalid {
-			  border:thin solid #FC6E6E;
-			}
-
-			&:valid {
-				border:thin solid #07701B;
-			}
 			&:focus{
 				outline: none;
-				border: thin solid @border-color-item;
+				border: 3px solid lighten(@border-color-item, 3%);
 			}
 	}
 	.form-imput textarea{
@@ -549,6 +555,11 @@ aside.read-next{
 			color: @color-white;
 			text-decoration: underline;
 		}
+	}
+	.e-form{
+		display: block;
+		color: #FC6E6E;
+		margin-top: .5em;
 	}
 }
 //pagination blog

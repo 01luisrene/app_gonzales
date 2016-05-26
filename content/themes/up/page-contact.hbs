@@ -16,21 +16,24 @@
 
       <h3 class="title-contacto">Contact Form</h3>
 
-      <form class="form-contact" action="//formspree.io/01luisrene@gmail.com" method="POST">
+      <form class="form-contact js_form_cantact" action="//formspree.io/your-email@email.com" method="POST">
         <!-- DO NOT EDIT BELOW THIS LINE -->
         <input type="hidden" name="_subject" value="Message of {{@blog.url}}" />
         <input type="text" name="_gotcha" style="display:none" />
         <input type="hidden" name="_next" value="{{@blog.url}}/thanks/" />
         <div class="form-imput">
-          <input type="text" name="name" placeholder="Name complete" required></input>
+          <input class="js_input_name" type="text" name="name" placeholder="Name complete"></input>
+          <span class="js_error_name e-form"></span>
         </div>
         <div class="form-imput"> 
-          <input type="email" name="email" placeholder="Email" required></input>
+          <input class="js_input_email" type="email" name="email" placeholder="Email"></input>
+          <span class="js_error_email e-form"></span>
         </div>
         <div class="form-imput">
-          <textarea name="message" id="" cols="30" rows="3" placeholder="Write your message :)" required></textarea>
+          <textarea class="js_textarea_message" name="message" id="" cols="30" rows="3" placeholder="Write your message :)"></textarea>
+          <span class="js_error_message e-form"></span>
         </div>
-          <input class="btn btn-form" type="submit" value="Send message"></input>
+          <input class="btn btn-form js_btn_form" type="submit" value="Send message"></input>
       </form>
     </section>
   </article>

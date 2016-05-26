@@ -1,4 +1,10 @@
 'use strict';
+/*
+  ========================== https://github.com/jamalneufeld/ghostHunter ===============
+
+  function to display search matches
+
+*/
 function search(){
 	var searchField =  $('#js_campo_search').ghostHunter({
     results             : '#js_list_results',
@@ -16,7 +22,9 @@ function search(){
 	  }
   });
 }
-
+/*
+  hides the container of search of the articles
+*/
 function closeSearch(){
 	$('#js_box_results_close').on('click', function(event) {
 		var $caja_buscar = $('#js_campo_search');
@@ -26,6 +34,9 @@ function closeSearch(){
 		});
 	});
 }
+/*
+  function to display the navigation pane hidden on mobile devices
+*/
 function displayNav(){
 	$('#js_nav_icon_mobile').on('click', function(event) {
 		event.preventDefault();
@@ -38,6 +49,13 @@ function displayNav(){
     }
   });
 }
+/*
+===================== http://wicky.nillia.ms/headroom.js/ =========================
+
+hides the nav when the user is scrolling down in the document
+o
+shows the nav when the user is scrolling up in the document
+*/
 function headroom(){
   $(".headroom").headroom({
     "offset": 205,
@@ -49,6 +67,9 @@ function headroom(){
     }
   });
 }
+/*
+  button up: helps to return to the beginning of the HTML document in a quick way
+*/
 function buttonUp(){
   $(window).scroll(function(){
     if($(this).scrollTop() > 300){
@@ -65,50 +86,73 @@ function buttonUp(){
     return false;
   });
 }
+/*
+https://highlightjs.org/
+give a better presentation to our codeshare
+*/
 function highlight(){
 	$('pre code').each(function(i, block) {
     hljs.highlightBlock(block);
   });
 }
-function cookiePolicy(){
-  function setCookie(cname,cvalue,exdays) {
-      var d = new Date();
-      d.setTime(d.getTime() + (exdays*24*60*60*1000));
-      var expires = "expires=" + d.toGMTString();
-      document.cookie = cname+"="+cvalue+"; "+expires + "; path=/";
-  }
+/*
+================ Function to cookies policy ==========================
+================ http://www.w3schools.com/js/js_cookies.asp ==========
+*/
 
-  function getCookie(cname) {
-      var name = cname + "=";
-      var ca = document.cookie.split(';');
-      for(var i=0; i<ca.length; i++) {
-          var c = ca[i];
-          while (c.charAt(0)==' ') c = c.substring(1);
-          if (c.indexOf(name) == 0) {
-              return c.substring(name.length, c.length);
-          }
-      }
-      return "";
-  }
+//function to set a cookie
+function setCookie(cname,cvalue,exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires=" + d.toGMTString();
+    document.cookie = cname+"="+cvalue+"; "+expires + "; path=/";
+}
+//function to get a cookie
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1);
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
 
-  var p_cookie=getCookie("_upcookie");
-  if (p_cookie == "") {
-      $('#js_barra_aceptacion_cookie').css({
+function cookiePolicy() {
+  //stores the value of the cookie
+  var cookie=getCookie("_upcookie");
+  //validate whether the variable (cookie) is empty
+  if (cookie == "") {
+    $('#js_barra_aceptacion_cookie').css({
         display: 'block'
-      });
-   }
+    });
+  }
+  //creates the cookie by clicking on the button with the id (js_btn_cookie)
   $('#js_btn_cookie').on('click', function(e) {
     e.preventDefault();
-    p_cookie = '01luisrene';
-    if (p_cookie != "" && p_cookie != null) {
-      setCookie("_upcookie", p_cookie, 30);
+    var nCookie="_upcookie";
+    var cCookie = 'policy of cookies for "theme up"';
+    //Validate if the variable (nCookie) is different vacuum
+    if (nCookie != "" && nCookie != null) {
+      // calls the setCookie () function and assigns values
+      setCookie(nCookie, cCookie, 30);
+      //hides the container with the id (js_barra_aceptacion_cookie)
       $('#js_barra_aceptacion_cookie').css({
         display: 'none'
       });
-      console.log("cookie creada: " + p_cookie);
-     }
-  });
+      //show a message on the console
+      console.log("cookie creada: Name:" + nCookie +" | Content: " + cCookie);
+    }
+  });  
 }
+/*
+================ cookie end ==========================
+*/
+
+/**reading progress**/
 function progressReading() {
   var getMax = function() {
       return $(document).height() - $(window).height();
@@ -132,6 +176,11 @@ function progressReading() {
       });
   }        
 }
+/*
+======================= https://github.com/michael-lynch/reading-time =======
+
+show reading time for article
+*/
 function readingTime(){
   var $article = $('.js_reading_time');
   $article.readingTime({
@@ -149,6 +198,11 @@ function readingTime(){
     }
   });
 }
+/*
+================= http://dimsemenov.com/plugins/magnific-popup/ =============
+
+popup for images of the loop
+*/
 function magnificPopup(){ 
   $('.open-popup-link').magnificPopup({
     type: 'image',
@@ -163,6 +217,11 @@ function magnificPopup(){
     }
   });
 }
+/*
+================= https://disqus.com/ ============
+
+platform discussions
+*/
 function disqus(newIdentifier, newUrl, newTitle) {
       if ($('#disqus_thread').length) {
         if (typeof DISQUS === 'undefined') {
@@ -190,9 +249,108 @@ function disqus(newIdentifier, newUrl, newTitle) {
         }
       }
     }
+/*
+ function to validate contact form
+*/
 function formContact(){
+  var form = $('.js_form_cantact'),
+      input_name = $('.js_form_cantact .js_input_name'),
+      input_email = $('.js_form_cantact .js_input_email'),
+      textarea_message = $('.js_form_cantact .js_textarea_message'),
+      btn_form = $('.js_form_cantact .js_btn_form'),
+      e_name = $('.js_error_name'),
+      e_email = $('.js_error_email'),
+      e_message = $('.js_error_message');
 
+      input_name.on('focusout', function(event) {
+        if(input_name.val() == 0){
+          e_name.html('Enter your full name please.');
+          input_name.css({border: '3px solid  #FC6E6E'});
+          return false;
+        }else if(!input_name.val().match(/^[a-záéíóúñü ]+$/ig)){
+          e_name.html('Correct your name please.');
+          input_name.css({border: '3px solid  #FC6E6E'});
+          return false;
+        }else{
+           input_name.css({border: '3px solid  #27A73F'});
+           e_name.html('');
+        }
+      });
+
+      input_email.on('focusout', function(event) {
+        if(input_email.val() == 0){
+          e_email.html('Enter your email please.');
+          input_email.css({border: '3px solid  #FC6E6E'});
+          return false;
+        }else if(!input_email.val().match(/^[a-zA-Z0-9\._-]+@[a-zA-Z0-9-]{2,}[.][a-zA-Z]{2,4}$/)){
+          e_email.html('Invalid email format.');
+          input_email.css({border: '3px solid  #FC6E6E'});
+          return false;
+        }else{
+          input_email.css({border: '3px solid  #27A73F'});
+          e_email.html('');
+        }
+      });
+
+       textarea_message.on('focusout', function(event) {
+        if(textarea_message.val() == 0){
+          e_message.html('Enter your message please.');
+          textarea_message.css({border: '3px solid  #FC6E6E'});
+          return false;
+        }else{
+         textarea_message.css({border: '3px solid  #27A73F'});
+          e_message.html('');
+        }
+       });
+
+      btn_form.on('click', function(event) {
+        event.preventDefault();
+        if(input_name.val() == 0){
+          e_name.html('Enter your full name please.');
+          input_name.css({border: '3px solid  #FC6E6E'});
+          input_name.focus();
+          return false;
+        }else if(!input_name.val().match(/^[a-záéíóúñü ]+$/ig)){
+          e_name.html('Correct your name please.');
+          input_name.css({border: '3px solid  #FC6E6E'});
+          input_name.focus();
+          return false;
+        }else{
+           input_name.css({border: '3px solid  #27A73F'});
+           e_name.html('');
+        }
+        if(input_email.val() == 0){
+          e_email.html('Enter your email please.');
+          input_email.css({border: '3px solid  #FC6E6E'});
+          input_email.focus();
+          return false;
+        }else if(!input_email.val().match(/^[a-zA-Z0-9\._-]+@[a-zA-Z0-9-]{2,}[.][a-zA-Z]{2,4}$/)){
+          e_email.html('Invalid email format.');
+          input_email.css({border: '3px solid  #FC6E6E'});
+          input_email.focus();
+          return false;
+        }else{
+          input_email.css({border: '3px solid  #27A73F'});
+          e_email.html('');
+        }
+
+        if(textarea_message.val() == 0){
+          e_message.html('Enter your message please.');
+          textarea_message.css({border: '3px solid  #FC6E6E'});
+          textarea_message.focus();
+          return false;
+        }else{
+         textarea_message.css({border: '3px solid  #27A73F'});
+          e_message.html('');
+        }
+
+        if(confirm("Confirm shipment!") == true){
+          form.submit();
+        }
+      });
 }
+
+//run the functions in the event (ready) of (jquery)
 
 $(document).ready(function() {
 	search();
