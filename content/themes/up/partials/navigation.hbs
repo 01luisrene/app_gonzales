@@ -1,29 +1,29 @@
 {{! main header }}
 <header class="headroom header--fixed">
-{{! navigation menu }}
+{{! navigation }}
 <nav class="navigation">
-	<div class="inner-box navigation-inner">
-	{{! menu box for mobile }}
-	<div class="box-nav-mobile">
+	<div class="row-inner navigation-inner">
+	{{! Container navigation mobile }}
+	<div class="navigation-mobile">
 		{{#if @blog.logo}}
-		<figure class="up-logo">
+		<figure class="uptheme-logo">
 				<a href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}"></a>
 		</figure>
 		{{else}}
-			<a class="name-app" href="{{@blog.url}}">{{@blog.title}}</a>
+			<a class="uptheme-name-app" href="{{@blog.url}}">{{@blog.title}}</a>
 		{{/if}}
-		{{! mobile navigation icon }}
-		<span class="nav-icon-mobile" id="js_nav_icon_mobile">
+		{{! Icon of mobile navigation }}
+		<span class="navigation-icon-mobile" id="js_navigation_icon_mobile">
 			<i class="fa fa-bars" aria-hidden="true"></i>
 		</span>
 	</div>
-	{{! blog pages list }}
-	<ul class="nav-menu" id="js_nav_menu">
+	{{! pages list }}
+	<ul class="main-menu" id="js_main_menu">
 		{{#foreach navigation}}
 		{{#if current}}
-			<li class="nav-menu-item item-current {{slug}}" role="presentation"><span title="{{label}}">{{label}}</span></li>
+			<li class="main-menu-item item-current {{slug}}" role="presentation"><span title="{{label}}">{{label}}</span></li>
 		{{else}}
-		  <li class="nav-menu-item {{slug}}" role="presentation"><a href="{{url absolute="true"}}" title="{{label}}">{{label}}</a></li>
+		  <li class="main-menu-item {{slug}}" role="presentation"><a href="{{url absolute="true"}}" title="{{label}}">{{label}}</a></li>
 		{{/if}}		
 		{{/foreach}}
 	</ul>

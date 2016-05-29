@@ -2,11 +2,11 @@
 {{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
 
 {{! If we have a tag cover, display that - else blog cover - else nothing }}
-<section class="presentation-section tag-head" {{#if tag.image}} style="background-image: url({{tag.image}})" {{else}} style="background-image: url({{asset "images/cover/categories_default.png"}})"{{/if}}>
+<section class="presentation-section tag-head" {{#if tag.image}} style="background-image: url({{tag.image}})" {{else}} style="background-image: url({{asset "images/cover/categories_default_820x480.png"}})"{{/if}}>
 
-  {{!including search form  partials/search.hbs}}
+   {{! The tag below includes the search form - partials/search.hbs}}
   {{> "search"}}
-    <div class="presentation-content inner-box">
+    <div class="presentation-content row-inner">
       <h1 class="post-title">{{tag.name}}</h1>
       <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}"><i class="fa fa-calendar-o" aria-hidden="true"></i> {{date format="DD MMMM YYYY"}}</time>
       <p class="page-description">
@@ -20,7 +20,7 @@
 </section>
 
 {{! The main content area on the homepage }}
-<section class="content___loop inner-box">
+<section class="content___loop row-inner">
 
     {{! The tag below includes the post loop - partials/loop.hbs }}
     {{> "loop"}}

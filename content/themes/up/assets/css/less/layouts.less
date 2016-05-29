@@ -1,5 +1,5 @@
 .headroom {
-	background: @bg-navigation;
+	background: @navigation-bg;
   transition: transform 0.25s ease-in-out;
   will-change: transform;
 
@@ -28,7 +28,7 @@
 	.flex-box-j-c(space-between);
 }
 /* styles for the logo */
-.up-logo{
+.uptheme-logo{
 	margin-left: 0;
 	margin-right: 0;
 	margin-top: 8px;
@@ -39,9 +39,9 @@
 	}
 }
 /*styles for the application name*/
-.name-app{
+.uptheme-name-app{
 	display: block;
-	color: @color-name-app;
+	color: @navigation-name-app-color;
 	margin-top: 15px;
 	margin-bottom: 18px;
 	text-transform: uppercase;
@@ -51,20 +51,20 @@
 	line-height: 1em;
 	font-weight: 700;
 	&:hover{
-		color: @color-name-app-hover;
+		color: @navigation-name-app-color-hover;
 	}
 	&:visited{
-		color: @color-name-app;
+		color: @navigation-name-app-color;
 	}
 }
 /*styles for the menu*/
-.nav-menu{
+.main-menu{
 	padding-left: 0;
 	padding-top: 9px;
 	padding-bottom: 0;
 	margin-top: 0;
 	margin-bottom: 0;
-	.nav-menu-item{
+	.main-menu-item{
 		display: inline-block;
 		position: relative;
 		&:last-child{
@@ -79,7 +79,7 @@
 			text-transform: uppercase;
 		}
 		a{
-			color: @color-text-link;
+			color: @navigation-link-color;
 			text-transform: uppercase;
 			display: block;
 			padding: .65em 1em;
@@ -87,7 +87,7 @@
 			line-height: 18px;
 			transition: .700s;
 			&:hover{
-				background: darken(@bg-navigation, 20%);
+				background: darken(@navigation-bg, 20%);
 				color: @color-white;
 				text-decoration: underline;
 			}
@@ -95,12 +95,12 @@
 	}
 }
 /*menu icon for mobile devices*/
-.nav-icon-mobile{
+.navigation-icon-mobile{
 	display: none;
 }
 /*styles for selected item*/
 .item-current{
-	background: darken(@bg-navigation, 25%);
+	background: darken(@navigation-bg, 25%);
 	border-radius: 3px;
 	a{
 		color: @color-white !important;
@@ -110,22 +110,22 @@
 
 /*styles for presentation*/
 .presentation-section{
-	background-color: @bg-no-cover;
+	background-color: @no-cover-bg;
 	background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  border-bottom: thin solid @border-bottom-presentation;
+  border-bottom: thin solid @presentation-border-bottom;
 	position: relative;
 	padding-top: 56px;
 	min-height: 450px;
 }
-/*styles for form search*/
-.form-search{
+/*styles for search*/
+.search-form{
 	.flex-box-f-d(row-reverse);
    margin-top: 1.5em;
 	input[type="text"]{
 		.border-radius(25px);
-		border: thin solid @border-field;
+		border: thin solid @search-input-border;
 		padding:.2em .2em .2em 1.6em;
 		margin-top:0;
 		height: 35px;
@@ -134,19 +134,19 @@
 			outline: none;
 		}
 	}
-	.box-field{
+	.search-container{
 		position: relative;
 	}
-	.icon-search{
-		color: @color-icon-search;
+	.search-icon{
+		color: @search-icon-color;
 		position: absolute;
 		left: .5em;
 		top: .6em;
 	}
 }
-/*container results*/
-.container-results{
-	background: @bg-box-results;
+/*search container results*/
+.search-results{
+	background: @search-results-box-bg;
 	border-top: thin solid @color-white;
 	border-bottom: thin solid @color-white;
 	cursor: zoom-in;
@@ -159,8 +159,8 @@
 	z-index: @z-index - 2;
 }
 /* close button for the form */
-.btn-results-close{
-	background-color: @bg-box-results;
+.search-btn-close{
+	background-color: @search-results-box-bg;
 	.border-radius(5px 5px 0 0);
 	border: thin solid @color-white;
 	border-bottom: 0;
@@ -173,7 +173,7 @@
 	top:-43px;
 	z-index: @z-index - 3;
 }
-.results-list{
+.search-results-list{
 	background: transparent;
 	list-style-type: none;
 	overflow-x: hidden;
@@ -213,7 +213,7 @@
 
 /*container of the title, description and date*/
 .presentation-content{
-	background-color: @bg-presentation-content;
+	background-color: @presentation-content-bg;
 	display: block;
 	text-align: center;
 	margin-left: 10%;
@@ -226,7 +226,7 @@
 	}
 	.page-description, .post-date{
 		display: block;
-		color: @color-text-presentation;
+		color: @presentation-text-color;
 		font-family: @font-family-montserrat;
 		font-weight: normal;
 		font-size: 1.5em;
@@ -241,17 +241,17 @@
 	.flex-box-loop(space-around);
   width: 100%;
 .post{
-	background: @bg-post-item;
+	background: @loop-item-bg;
 	box-shadow:  5px 5px 3px 0px rgba(50, 50, 50, 0.75);
-	border: thin solid @border-color-item;
+	border: thin solid @loop-item-border-color;
 	margin-top: 3em;
 	position: relative;
 	width: 30%;
-	.post-article-first{
-		background-color: lighten(@border-color-item, 25%);
-		border: 1px solid @border-color-item;
-		border-bottom: 2px solid @border-color-item;
-		color: @color-titles;
+	.post-first{
+		background-color: lighten(@loop-item-border-color, 25%);
+		border: 1px solid @loop-item-border-color;
+		border-bottom: 2px solid @loop-item-border-color;
+		color: @title-color;
 		display: block;
 		font-size: 1.5em;
 		font-weight: 700;
@@ -263,14 +263,14 @@
 		width: 100%;
 		z-index: @z-index - 1;
 	}
-	.post-images-box{
+	.loop-images-container{
 		position: relative;
 		line-height: 0;
 	}
 	.author-thumb{
 		background: @color-white;
 		display: block;
-		border: 2px solid @borde-color-thumb;
+		border: 2px solid @loop-thumb-border-color;
 		border-radius: 50%;
 		position: absolute;
 		bottom: -20px;
@@ -284,18 +284,21 @@
 	.author-name{
 		.text-hide();
 	}
-	.post-inner{
+	.loop-inner{
 		padding: 0 .7em .7em .7em;
 	}
 	.post-title{
-		color: @color-title-post;
+		color: @loop-title-color;
 		font-size: @font-size-base - 2;
 		line-height: @font-size-base - 2.9;
 		margin-top: .8em;
 		margin-bottom: .3em;
+		&::first-letter{
+			text-transform: uppercase;
+		}
 		&:hover{
 			text-decoration: underline;
-			color: lighten(@color-title-post, 5%);
+			color: lighten(@loop-title-color, 5%);
 		}
 		a{
 			color: inherit;
@@ -306,7 +309,7 @@
 		display: block;
 	}
 	.post-date{
-		color: lighten(@color-text-presentation, 10%);
+		color: lighten(@presentation-text-color, 10%);
 	}
 	.post-excerpt{
 		p{
@@ -328,8 +331,8 @@
 /*styles for post and page*/
 .page-content, .post-content{
 	background-color: @color-white;
-	margin-top: @espacio-em;
-	margin-bottom: @espacio-em;
+	margin-top: @em-size;
+	margin-bottom: @em-size;
 	padding-top: 15px;
 	padding-bottom: 15px;
 	max-width: @max-width;
@@ -353,12 +356,12 @@
    }
 	}
 	.line{
-		margin: (@espacio-em - .5) 0;
+		margin: (@em-size - .5) 0;
 	}
 /*styles for div reading and author*/
 .reading-author{
 	.flex-box-j-c(space-between);
-	background: @bg-navigation;
+	background: @navigation-bg;
 	margin-top: -15px;
 	margin-left: -15px;
 	margin-right: -15px;
@@ -395,18 +398,18 @@
 .disqus-box{
 	background: @color-white;
 	max-width: @max-width;
-	margin-bottom: @espacio-em;
+	margin-bottom: @em-size;
 	padding-top: .5em;
 	h3{
 		display: inline-block;
 		position: relative;
-		.title-underlining(@color-titles, -.2em)
+		.title-underlining(@title-color, -.2em)
 	}
 }
 /*posts tags*/
 .tag-links{
 	a{
-		background: @bg-tags-link;
+		background: @tags-link-bg;
 		.border-radius(3px);
 		color: @color-black;
 		display: inline-block;
@@ -422,11 +425,11 @@
 }
 .post-footer{
 	.flex-box-loop(space-between);
-	margin: @espacio-em 0;
+	margin: @em-size 0;
 	.author-image{
 		background-color: @color-white;
 		.border-radius(50%);
-		border: 4px solid @borde-color-thumb;
+		border: 4px solid @loop-thumb-border-color;
 		display: inline-block;
 		margin: 0;
 		height: 200px;
@@ -447,7 +450,7 @@
 	}
 	.share{
 		text-align: center;
-		border:thin solid @border-color-item;
+		border:thin solid @loop-item-border-color;
 		padding: 10px;
 		margin: 1em 0;
 		width: 100%;
@@ -461,21 +464,21 @@
 /*Posts Next and previous*/
 aside.read-next{
 	.flex-box-j-c(space-between);
-	margin-bottom: @espacio-em;
+	margin-bottom: @em-size;
 }
 .read-next-story{
-	background-color: @bg-no-cover;
+	background-color: @no-cover-bg;
 	display: block;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
-	border: thin solid @border-color-item;
+	border: thin solid @loop-item-border-color;
 	color: @color-black;
 	text-decoration: none;
 	position: relative;
 	width: 49%;
 	.post{
-		background: rgba(0,0,0,.4);
+		background: @read-next-bg;
 		border: 1em solid transparent;
 		display: inline-block;
 		padding-top: 4em;
@@ -484,10 +487,10 @@ aside.read-next{
 		min-height: 300px;
 		min-width: 100%;
 		&:hover{
-			background-color: rgba(255, 255, 255, 0.6);
-			border: 1em solid @color-titles;
+			background-color: @read-next-bg-hover;
+			border: 1em solid @title-color;
 			h2{
-				color: @color-titles;
+				color: @title-color;
 			}
 			p{color: @color-black}
 		}
@@ -501,7 +504,7 @@ aside.read-next{
 .next{
 	.post{padding-left: 5em; padding-right: 1em;}
 	&::before{
-		color: @color-link;
+		color: @navigation-name-app-color;
 		content: "\f104";
 		font-family: @font-family-fontAwesome;
 		font-size: 7em;
@@ -515,7 +518,7 @@ aside.read-next{
 .prev{
 	.post{padding-right: 5em; padding-left: 1em;}
 	&::after{
-		color: @color-link;
+		color: @navigation-name-app-color;
 		content: "\f105";
 		font-family: @font-family-fontAwesome;
 		font-size: 7em;
@@ -530,14 +533,14 @@ aside.read-next{
 	position: fixed;
 	bottom: 0;
 	left: 0;
-  height: @height-progress;
+  height: @progress-height;
   width: 100%;
   z-index: @z-index + 2;
 }
 //********************************END********************************
 /*contact from*/
 .contact-form{
-	background: @bg-contact-form;
+	background: @contact-form-bg;
 	display: block;
 	margin-left: -15px;
 	margin-right: -15px;
@@ -547,20 +550,20 @@ aside.read-next{
 		display: inline-block;
 		position: relative;
 		margin-bottom: .8em;
-		.title-underlining(@color-titles, -.2em);
+		.title-underlining(@title-color, -.2em);
 	}
 	.form-imput{
 		margin-bottom: 1.5em;
 	}
 	.form-imput input, .form-imput textarea{
-			border:3px solid @border-color-item;
+			border:3px solid @loop-item-border-color;
 			font-size: 1.2em;
 			padding: .5em;
 			height: 55px;
 			width: 100%;
 			&:focus{
 				outline: none;
-				border: 3px solid lighten(@border-color-item, 3%);
+				border: 3px solid lighten(@loop-item-border-color, 3%);
 			}
 	}
 	.form-imput textarea{
@@ -572,22 +575,22 @@ aside.read-next{
 	}
 	.e-form{
 		display: block;
-		color: #FC6E6E;
+		color:@contact-form-e-color;
 		margin-top: .5em;
 	}
 }
 //pagination blog
 .pagination{
 	.flex-box-j-c(space-between);
-  margin-top: @espacio-em + 1;
-	margin-bottom: @espacio-em - .5;
-	padding-top: @espacio-em;
-	padding-bottom: @espacio-em;
+  margin-top: @em-size + 1;
+	margin-bottom: @em-size - .5;
+	padding-top: @em-size;
+	padding-bottom: @em-size;
 	width: 100%;
 }
 .newer-posts, .older-posts{
-	background-color:@bg-btn-pagination;
-	border:4px solid @border-color-btn-pag;
+	background-color:@pagination-btn-bg;
+	border:4px solid @pagination-btn-border-color;
 	color: lighten(#090707, 5%);
 	font-family:@font-family-lato;
 	font-size:15px;
@@ -595,12 +598,12 @@ aside.read-next{
 	padding: .5em 1em;
 	text-decoration: none;
 
-	&:visited{color:#090707;}
+	&:visited{color: @pagination-color-visited;}
 
 	&:hover {
-		background-color:@bg-btn-pag-hover;
-		border:4px solid @border-color-btn-pag-hover;
-		color:#090707;
+		background-color:@pagination-btn-bg-hover;
+		border:4px solid @pagination-btn-border-color-hover;
+		color: @pagination-color-visited;
 		text-decoration: underline;
 	}
 	&:active {
@@ -610,15 +613,15 @@ aside.read-next{
 }
 .page-number{
 	display: inline-block;
-	color: #494949;
+	color: @pagination-number-color;
 	font-size: 1em;
 	text-align: center;
 	padding-top: 8px;
 }
-.box-newer-posts, .box-older-posts, .page-number{
+.container-newer-posts, .container-older-posts, .page-number{
 	width: 33%;
 }
-.box-older-posts{
+.container-older-posts{
 	.flex-box-j-c(flex-end);
 }
 
@@ -629,7 +632,7 @@ aside.read-next{
 .author-template .author-image{
 	background-color: @color-white;
 	.border-radius(50%);
-	border: 4px solid @borde-color-thumb;
+	border: 4px solid @loop-thumb-border-color;
 	display: inline-block;
 	position: absolute;
 	bottom:0;
@@ -662,7 +665,7 @@ aside.read-next{
 
 /*footer*/
 .site-footer{
-	background: @bg-footer;
+	background: @footer-bg;
 	color: @color-white;
 	padding-top: 1em;
 	padding-bottom: 1em;
@@ -670,14 +673,22 @@ aside.read-next{
 .footer-container{
 	.flex-box-j-c(space-between);
 }
-.description, .copyright-and-social-networks{
+.footer-col{
+	&:first-child{
+		padding-right: 15px;
+	}
+	&:last-child{
+		text-align: right;
+		padding-left: 15px;
+	}
+	width: 50%;
 	p{
 		margin: 0;
 	}
 }
 .footer-title{
 	display: inline-block;
-	color: @border-color-item;
+	color: @loop-item-border-color;
 	font-family: @font-family-montserrat;
 	font-size: 1.8em;
 	font-weight: 700;
@@ -686,13 +697,9 @@ aside.read-next{
 	margin-bottom: .5em;
 	padding-bottom: .3em;
 
-	.title-underlining(@border-color-item, -.2em, 2px);
+	.title-underlining(@loop-item-border-color, -.2em, 2px);
 }
 .description{
-	width: 50%;
-}
-.copyright-social-networks{
-	text-align: right;
 	width: 50%;
 }
 .social-networks{
@@ -700,7 +707,7 @@ aside.read-next{
 	a{
 		background: transparent;
 		border-radius: 50%;
-		border: 2px solid @border-redes-sociales;
+		border: 2px solid @footer-rs-boder-color;
 		display: inline-block;
 		padding: 10px 12px 10px 12px;
 		margin-right: .5em;
@@ -708,7 +715,7 @@ aside.read-next{
 		height: 45px;
 		width: 45px;
 		&:hover{
-			border: 2px solid #BBB9B9;
+			border: 2px solid @footer-rs-boder-color-hover;
 		}
 		&:last-child{
 			margin-right: 0;
@@ -717,8 +724,8 @@ aside.read-next{
 }
 /*styles for cookies policy*/
 .bar-accept-cookie{
-  background: rgba(42,42,42, .9);
-  border-top: thin solid #606060;
+  background: @cookie-bg;
+  border-top: thin solid @cookie-boder-color;
   box-sizing: border-box;
   position: fixed;
   bottom:0;
@@ -729,7 +736,7 @@ aside.read-next{
   width: 100%;
   z-index: @z-index + 4;
   p{
-    color: #12B6F3;
+    color: @cookie-text-color;
     font-size: .8em;
     margin-top: 0;
     margin-bottom: 0;
@@ -737,14 +744,14 @@ aside.read-next{
     letter-spacing: normal;
   }
   a, a:hover{
-    color: #fff;
+    color: @color-white;
   }
   .btn-cookie{
 		display: inline-block;
 	  border: 1px solid transparent;
 	  .border-radius(6px);
 	  cursor: pointer;
-	  color: #333333;
+	  color: @cookie-btn-bg;
 	  font-size: 1em;
 	  font-weight: 700;
 	  padding: 0 10px;
@@ -754,7 +761,7 @@ aside.read-next{
 
 /*styles to button up*/
 .button-up{
-	background-color: darken(@bg-navigation, 10%);
+	background-color: darken(@navigation-bg, 10%);
 	.border-radius(3px 3px 0 0);
 	border: thin dotted @color-white;
 	border-bottom: none;

@@ -3,7 +3,7 @@
 	.presentation-section{
 		background-attachment: fixed;
 	}
-	.inner-box {
+	.row-inner {
 	  width: 1200px;
 	}
 }
@@ -12,7 +12,7 @@
 	body{
 		color: tomato;
 	}
-	.inner-box {
+	.row-inner {
 	  width: 970px;
 	}
 /**********************************END*******************************************/
@@ -49,18 +49,18 @@
 	.navigation-inner{
 		display: inherit;
 	}
-	.box-nav-mobile{
+	.navigation-mobile{
 		.flex-box-j-c(space-between);
 	  width: 100%;
 	}
-	.nav-menu{
-		border-top: thin solid darken(@bg-navigation, 15%);
+	.main-menu{
+		border-top: thin solid darken(@navigation-bg, 15%);
 		.box-shadow(inset 0px 2px 5px 0px rgba(255, 255, 255, .3));
 		display: none;
 		margin-left: -15px;
 		margin-right: -15px;
 		padding: 15px;
-		.nav-menu-item {
+		.main-menu-item {
 			display: block;
 			width: 100%;
 			margin-top: 10px;
@@ -69,12 +69,12 @@
 			}
 		}
 	}
-	.nav-icon-mobile{
+	.navigation-icon-mobile{
 		display: block;
 		i{
-			background-color: darken(@bg-navigation, 10%);
+			background-color: darken(@navigation-bg, 10%);
 			.border-radius(3px);
-			color: @color-icon-nav-mobile;
+			color: @navigation-icon-color;
 			margin-top: 8px;
 			padding-left: 5px;
 			padding-right: 5px;
@@ -106,7 +106,7 @@
 		}
 	}
 	/**********************************END*******************************************/
-	.inner-box {
+	.row-inner {
 		width: 100%;
 	}
 	/**********************************END*******************************************/
@@ -128,14 +128,14 @@
 	.footer-container{
 		.flex-box-f-d(column);
 	}
-	.description, .copyright-social-networks{
+	.footer-col{
 		width: 100%;
-	}
-	.copyright-social-networks{
+		&:last-child{
 		text-align: left;
-		border-top: thin dotted @border-color-item;
+		border-top: thin dotted @loop-item-border-color;
 		margin-top: 1em;
 		padding-top: 1em;
+		}
 	}
 }
 /*================SMARTPHONES====================*/
@@ -151,25 +151,25 @@
 	h6{font-size: @font-size-base - 3.3;}
 
 /**********************************END*******************************************/
-	.inner-box {
+	.row-inner {
 	  width: 100%;
 	}
 	/*styles for class navigation*/
 	.navigation-inner{
 		display: inherit;
 	}
-	.box-nav-mobile{
+	.navigation-mobile{
 		.flex-box-j-c(space-between);
 	  width: 100%;
 	}
-	.nav-menu{
-		border-top: thin solid darken(@bg-navigation, 15%);
+	.main-menu{
+		border-top: thin solid darken(@navigation-bg, 15%);
 		.box-shadow(inset 0px 2px 5px 0px rgba(255, 255, 255, .3));
 		display: none;
 		margin-left: -15px;
 		margin-right: -15px;
 		padding: 15px;
-		.nav-menu-item {
+		.main-menu-item {
 			display: block;
 			width: 100%;
 			margin-top: 10px;
@@ -178,12 +178,12 @@
 			}
 		}
 	}
-	.nav-icon-mobile{
+	.navigation-icon-mobile{
 		display: block;
 		i{
-			background-color: darken(@bg-navigation, 10%);
+			background-color: darken(@navigation-bg, 10%);
 			.border-radius(3px);
-			color: @color-icon-nav-mobile;
+			color: @navigation-icon-color;
 			margin-top: 8px;
 			padding-left: 5px;
 			padding-right: 5px;
@@ -193,10 +193,18 @@
 	}
 	/**********************************END*******************************************/
 	/*styles for search list*/
-	.container-results{
+	.search-form{
+		input[type="text"]{
+			width: 100%;
+		}
+	}
+	.search-container{
+			width: 100%;
+	}
+	.search-results{
 		padding-right: 15px;
 	}
-	.list-results{
+	.search-results-list{
 		li{
 			p{
 				font-size: 1em;
@@ -212,14 +220,6 @@
 	.presentation-content{
 		margin-left: 0;
 		margin-right: 0;
-		width: 100%;
-	}
-	.form-search{
-		input[type="text"]{
-			width: 100%;
-		}
-	}
-	.box-field{
 		width: 100%;
 	}
 	/**********************************END*******************************************/
@@ -275,14 +275,14 @@
 	.footer-container{
 		.flex-box-f-d(column);
 	}
-	.description, .copyright-social-networks{
+	.footer-col{
 		width: 100%;
-	}
-	.copyright-social-networks{
+		&:last-child{
 		text-align: left;
-		border-top: thin dotted @border-color-item;
+		border-top: thin dotted @loop-item-border-color;
 		margin-top: 1em;
 		padding-top: 1em;
+		}
 	}
 	.title-footer{
 		font-size: 1em;
@@ -342,7 +342,7 @@
 }
 /**********************************END*******************************************/
 	//pagination blog
-	.box-newer-posts, .box-older-posts{
+	.container-newer-posts, .container-older-posts{
 		width: 49%;
 	}
 	.newer-posts, .older-posts{
@@ -353,7 +353,7 @@
 		display: none;
 		visibility: hidden;
 	}
-	.box-older-posts{
+	.container-older-posts{
 		text-align: right;
 	}
 }

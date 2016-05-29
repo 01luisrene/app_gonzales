@@ -6,17 +6,17 @@
 
 */
 function search(){
-	var searchField =  $('#js_input_search').ghostHunter({
-    results             : '#js_results_list',
+	var searchField =  $('#js_search_input').ghostHunter({
+    results             : '#js_search_results_list',
     info_template   : "<p class='number-posts'>Number of posts found: {{amount}}</p>",
     result_template : "<li><p> <a href='{{link}}'>{{title}}</a></p></li>",
     onKeyUp             : true,
     displaySearchInfo   : true
   });
-  $('#js_input_search').on('keyup', function() {
-  	var $caja_buscar = $('#js_input_search').val().length;
+  $('#js_search_input').on('keyup', function() {
+  	var $caja_buscar = $('#js_search_input').val().length;
 	  if($caja_buscar > 0){
-  		$('#js_container-results').css({
+  		$('#js_search_container_results').css({
   			display: 'block'
   		}).addClass('animated slideInLeft');
 	  }
@@ -26,10 +26,10 @@ function search(){
   hides the container of search of the articles
 */
 function closeSearch(){
-	$('#js_results_close').on('click', function(event) {
-		var $caja_buscar = $('#js_input_search');
+	$('#js_search-btn-close').on('click', function(event) {
+		var $caja_buscar = $('#js_search_input');
 		setTimeout(function(){ $caja_buscar.val(''); }, 1000);
-		$('#js_container-results').css({
+		$('#js_search_container_results').css({
 				display: 'none'
 		});
 	});
@@ -38,14 +38,14 @@ function closeSearch(){
   function to display the navigation pane hidden on mobile devices
 */
 function displayNav(){
-	$('#js_nav_icon_mobile').on('click', function(e) {
+	$('#js_navigation_icon_mobile').on('click', function(e) {
 		e.preventDefault();
-		$('#js_nav_menu').slideToggle();
+		$('#js_main_menu').slideToggle();
 	});
 	$(window).resize(function(){
     var w = $(window).width();
-    if(w>320 && $('#js_nav_menu').is(':hidden')){
-      $('#js_nav_menu').removeAttr('style');     
+    if(w>320 && $('#js_main_menu').is(':hidden')){
+      $('#js_main_menu').removeAttr('style');     
     }
   });
 }

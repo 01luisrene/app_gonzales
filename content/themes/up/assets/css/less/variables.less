@@ -1,10 +1,11 @@
 //global variables
-@bg-body: #AADAFB;
+@body-bg: #AADAFB;
 @font-size-base: 4em;
-@espacio-em: 2em;
-@color-link:#0E83A9;
-@color-link-hover:#075F7C;
-@color-link-visited:#1D5669;
+@em-size: 2em;
+@link-color:#0E83A9;
+@link-color-hover:#075F7C;
+@link-color-visited:#1D5669;
+@title-color: #000017;
 @z-index: 100;
 @max-width: 900px;
 
@@ -15,59 +16,76 @@
 @font-family-montserrat: 'Montserrat', sans-serif;
 @font-family-fontAwesome: 'FontAwesome';
 
-//variables navigation
-@bg-navigation: #40bee8;
-@color-text-link: #010210;
-@color-icon-nav-mobile: #0F0F0F;
-
-//name app
-@color-name-app: #000017;
-@color-name-app-hover: lighten(@color-name-app, 10%);
+//navigation bar
+@navigation-bg: #40bee8;
+@navigation-link-color: #010210;
+@navigation-icon-color: #0F0F0F;
+@navigation-name-app-color: #000017;
+@navigation-name-app-color-hover: lighten(@navigation-name-app-color, 10%);
 
 //presentation section
-@bg-no-cover: #55779A;
-@border-bottom-presentation: #062E6F;
-@color-titles: @color-name-app;
-@color-text-presentation: #191919;
-@bg-presentation-content:rgba(255, 255, 255, 0.5);
+@no-cover-bg: #55779A;
+@presentation-border-bottom: #062E6F;
+
+//presentation content
+@presentation-content-bg:rgba(255, 255, 255, 0.5);
+@presentation-text-color: #191919;
 
 //search
-@border-field: #003D79;
-@color-icon-search: @border-field;
+@search-input-border: #003D79;
+@search-icon-color: @search-input-border;
+@search-results-box-bg:#23222D;
 
-@bg-box-results:#23222D;
 
 //loop
-@bg-post-item: #fff;
-@border-color-item: #006A93;
-@borde-color-thumb: darken( @color-titles, 2%);
-@color-title-post: @color-titles;
-@border-color-read-more: #1F4F89;
+@loop-item-bg: #fff;
+@loop-item-border-color: #006A93;
+@loop-thumb-border-color: darken( @title-color, 2%);
+@loop-title-color: @title-color;
+
 
 //pagination
-@bg-btn-pagination: lighten(@border-color-item, 10%);
-@bg-btn-pag-hover: lighten(@border-color-item, 12%);
-@border-color-btn-pag: rgba(5, 5, 50, 0.6);
-@border-color-btn-pag-hover: #050232;
+@pagination-btn-bg: lighten(@loop-item-border-color, 10%);
+@pagination-btn-bg-hover: lighten(@loop-item-border-color, 12%);
+@pagination-btn-border-color: rgba(5, 5, 50, 0.6);
+@pagination-btn-border-color-hover: #050232;
+@pagination-number-color: #494949;
+@pagination-color-visited: #090707;
 
 //================posts==================
 //variables progress
-@bg-progress:#1986AA;
-@height-progress: 4px;
+@progress-bg:#1986AA;
+@progress-height: 4px;
 
 //background color tags link
-@bg-tags-link: @bg-navigation;
+@tags-link-bg: @navigation-bg;
+
+//Next and Previous
+@read-next-bg: rgba(0,0,0,.4);
+@read-next-bg-hover: rgba(255, 255, 255, 0.6);
 
 //================end posts==============
 
 // page contact
-@bg-contact-form:#7A7A7A;
+@contact-form-bg: @navigation-bg;
+@contact-form-e-color: #F12121;
 
 //footer
-@bg-footer: #0F0F0F;
-@border-redes-sociales: #00CA65;
+@footer-bg: #0F0F0F;
+@footer-rs-boder-color: #00CA65;
+@footer-rs-boder-color-hover: #BBB9B9;
+
+//cookies policy
+@cookie-bg: rgba(42,42,42, .9);
+@cookie-boder-color: #606060;
+@cookie-text-color: #12B6F3;
+@cookie-btn-bg:  #333333;
+
 
 //colores
 @color-white: #fff;
 @color-gray: #787878;
 @color-black: #191919;
+
+//button primary
+@btn-primary-border-color: #1F4F89;

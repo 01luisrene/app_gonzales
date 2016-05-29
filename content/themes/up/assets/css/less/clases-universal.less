@@ -1,5 +1,5 @@
 //clases univesal
-.inner-box {
+.row-inner {
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
@@ -16,7 +16,7 @@
 	clear: both;
 }
 .line{
-	background: @border-color-item;
+	background: @loop-item-border-color;
 	margin: 5px 0;
 	height: 2px;
 	width: 100%;
@@ -74,13 +74,13 @@
 }
 .btn-primary{
   background: @color-white;
-  border: thin solid @border-color-read-more;
-  .box-shadow(5px 5px 0px 0px @border-color-read-more);
+  border: thin solid @btn-primary-border-color;
+  .box-shadow(5px 5px 0px 0px @btn-primary-border-color);
   padding: .7em 1em;
   text-decoration: none;
   transition: .800s;
   &:hover{
-    background-color: lighten(@border-color-read-more, 6%);
+    background-color: lighten(@btn-primary-border-color, 6%);
     border: thin solid @color-white;
     color: @color-white;
     text-decoration: underline;

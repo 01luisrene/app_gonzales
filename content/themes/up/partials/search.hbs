@@ -1,10 +1,12 @@
-<form class="form-search inner-box">
-  <div class="box-field">
-    <i class="fa fa-search icon-search" aria-hidden="true"></i>
-    <input type="text" id="js_input_search" placeholder="Search...">
+{{! Search form }}
+<form class="search-form row-inner">
+  <div class="search-container">
+    <i class="fa fa-search search-icon" aria-hidden="true"></i>
+    <input type="text" id="js_search_input" placeholder="Search...">
   </div>
 </form>
-<div class="container-results" id="js_container-results" style="display:none;">
-    <span class="btn-results-close fa fa-times" id="js_results_close" title="Close" aria-hidden="true"></span>
-    <ul class="results-list inner-box" id="js_results_list"></ul>
-</div>
+{{! Results search form }}
+<section class="search-results" id="js_search_container_results" style="display:none;">
+  <span class="search-btn-close fa fa-times" id="js_search-btn-close" title="Close" aria-hidden="true"></span>
+  <ul class="search-results-list row-inner" id="js_search_results_list"></ul>
+</section>

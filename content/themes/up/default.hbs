@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+{{! The tag below includes the head - partials/head.hbs}}
 {{> "head" }}
 <body class="{{body_class}}">
 {{! This message will be displayed if the browser is IE version 8 or less. }}
-  <!--[if lt IE 9]>
+   <!--[if lt IE 9]> 
   <div class="browser-old">
-      <p class="browserupgrade">Está utilizando un navegador <strong>antiguo</strong>. Por favor <a href="http://browsehappy.com/">actualice su navegador</a> para mejorar su experiencia.</p>
+     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   </div>
   <![endif]-->
 
-{{! navigation bar}}
+  {{! The tag below includes the navigation - partials/navigation.hbs}}
   {{navigation}}
 
 <main role="main">
@@ -17,14 +18,14 @@
   {{{body}}}
 
   <footer class="site-footer">
-    <div class="inner-box footer-container">
-      {{! section for description of the blog }}
-      <section class="description">
+    <div class="row-inner footer-container">
+      {{! Section for description of the blog }}
+      <section class="footer-col">
         <span class="footer-title">Blog description</span>
         <p>{{@blog.description}}</p> 
       </section>
-      {{! section copyright and social networks }}
-      <section class="copyright-social-networks">
+      {{! Section copyright and social networks }}
+      <section class="footer-col">
         <span class="footer-title">{{@blog.title}}</span>
         <p>&copy; {{date format="YYYY"}}</p>
 
@@ -54,7 +55,7 @@
       </section>
     </div>
   </footer>
-  {{! cookie policy bar }}
+  {{! Cookie policy bar }}
   <div class="bar-accept-cookie" id="js_bar_accept_cookie" style="display: none;">
     <p> We request your permission to obtain statistical data on its navigation on this website, pursuant to Royal Decree-Law 13/2012. If you continue to browse we consider to accept the use of cookies. 
     <a href="/cookie-policy/"  class="info-cookie" target="_blank">More information</a> &nbsp;
@@ -66,6 +67,8 @@
     <i class="fa fa-angle-up" aria-hidden="true"></i>
   </a>
   </main>
+  {{! The tag below includes the scripts JS - partials/scripts.hbs }}
   {{> "scripts"}}
+
 </body>
 </html>

@@ -14,7 +14,7 @@
   <meta name="author" content="" />
   <meta name="application-name" content="up v. 1.0"/>
 
-  {{! Page to see ma localización http://www.geo-tag.de/generator/en.html }}
+  {{! Page to see my location http://www.geo-tag.de/generator/en.html }}
   <meta name="geo.region" content="PE-LAL" />
   <meta name="geo.placename" content="trujillo" />
   <!--[if IE]>
@@ -29,14 +29,16 @@
   {{! Styles'n'Scripts }}
   <link rel="stylesheet" href="{{asset "css/vendor/normalize.css"}}">
   <link rel="stylesheet" type="text/css" href="{{asset "css/up.css"}}" />
-  {{! IE old styles }}
-  <!--[if lt IE 9]>
+  {{! styles for IE < IE 9 }}
+   <!--[if lt IE 9]>
+  }
+  }
   <style>
     html {overflow: hidden;}
-    .browser-old {background: #171717;display: table-cell;position: fixed;top: 0;left: 0;bottom: 0;right: 0;z-index: 100000;}
-    .browser-old p {display: block;color: #006A93;font-size: 2em;line-height: 40px;position: absolute;top: 30%;padding: 0 1em;text-align: center;width: 100%;}
-    .browser-old p a {color: #00000d;}
-    .browser-old p a:hover {color: #000040;}
+    .browser-old {background: #40bee8;display: table-cell;position: fixed;top: 0;left: 0;bottom: 0;right: 0;z-index: 100000;}
+    .browserupgrade {display: block;color: #000017;font-size: 2em;line-height: 40px;position: absolute;top: 30%;padding: 0 1em;text-align: center;width: 100%;}
+    .browserupgrade a {color: #1C2BEF;}
+    .browserupgrade a:hover {color: #000040;}
   </style>
   <![endif]-->
  
