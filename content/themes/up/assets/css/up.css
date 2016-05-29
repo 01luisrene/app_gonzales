@@ -282,6 +282,9 @@ progress::-webkit-progress-value {
 .name-app:hover {
   color: #00004a;
 }
+.name-app:visited {
+  color: #000017;
+}
 /*styles for the menu*/
 .nav-menu {
   padding-left: 0;
@@ -658,6 +661,7 @@ progress::-webkit-progress-value {
   -moz-border-radius: 50%;
   -o-border-radius: 50%;
   -ms-border-radius: 50%;
+  overflow: hidden;
   margin: 0;
   height: 50px;
   width: 50px;
@@ -672,10 +676,23 @@ progress::-webkit-progress-value {
   overflow: hidden;
 }
 .disqus-box {
+  background: #ffffff;
   max-width: 900px;
   margin-bottom: 2em;
+  padding-top: .5em;
 }
-/*tags*/
+.disqus-box h3 {
+  display: inline-block;
+  position: relative;
+}
+.disqus-box h3::before {
+  content: "";
+  border: 3px solid #000017;
+  position: absolute;
+  bottom: -0.2em;
+  width: 25%;
+}
+/*posts tags*/
 .tag-links a {
   background: #40bee8;
   border-radius: 3px;
@@ -750,15 +767,13 @@ progress::-webkit-progress-value {
   text-decoration: none;
   font-size: 3em;
 }
+/*Posts Next and previous*/
 aside.read-next {
   display: -webkit-flex;
   display: flex;
   -webkit-justify-content: space-between;
   justify-content: space-between;
   margin-bottom: 2em;
-}
-aside.read-next .no-cover .post {
-  display: inline-block;
 }
 .read-next-story {
   background-color: #55779a;
@@ -866,7 +881,6 @@ aside.read-next .no-cover .post {
   border: 3px solid #006a93;
   font-size: 1.2em;
   padding: .5em;
-  resize: vertical;
   height: 55px;
   width: 100%;
 }
@@ -877,6 +891,7 @@ aside.read-next .no-cover .post {
 }
 .contact-form .form-imput textarea {
   height: 250px;
+  resize: vertical;
 }
 .contact-form .btn-form {
   width: 145px;
@@ -989,6 +1004,7 @@ aside.read-next .no-cover .post {
   text-align: center;
   font-size: 1.5em;
 }
+/*footer*/
 .site-footer {
   background: #0f0f0f;
   color: #ffffff;
@@ -1018,7 +1034,7 @@ aside.read-next .no-cover .post {
 }
 .footer-title::before {
   content: "";
-  border: 3px solid #006a93;
+  border: 2px solid #006a93;
   position: absolute;
   bottom: -0.2em;
   width: 25%;

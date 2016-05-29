@@ -15,12 +15,12 @@
         <img src="{{image}}" alt="{{{title}}} - Picture">
       </a>
     {{else}}
-      <a href="{{asset "images/cover/cover_default.png"}}" class="open-popup-link" title="Image default">
-        <img src="{{asset "images/cover/cover_default.png"}}">
+      <a href="{{asset "images/cover/default.png"}}" class="open-popup-link" title="Image default">
+        <img src="{{asset "images/cover/default.png"}}">
       </a>
     {{/if}}
     {{#author}}
-      {{#if author.image}}
+      {{#if image}}
         <a class="author-thumb" href="{{url}}">
           <img  src="{{image}}" alt="{{name}}'s Picture" nopin="nopin" title="Author: {{name}}"/>
         </a>

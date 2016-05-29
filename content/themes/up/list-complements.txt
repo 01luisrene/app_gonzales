@@ -6,6 +6,8 @@
 * Política de cookies
 * progreso de lectura
 
+* LESS: preprocesador 
+
 # librerías js
 
 - ghostHunter.js: sistema de búsqueda para Ghost
@@ -13,7 +15,10 @@
 - highlight.js: El resaltado de sintaxis para la Web
 - readingTime.js: tiempo de lectura del artículo
 - magnificPopup.js: Popup para imágenes
+- fitVids.js: para hacer responsive los vídeos
+
 - disqus: plataforma para comentarios y discusiones
+- AddThis: para compartir articulos
 - https://formspree.io : para enviar mensajes a un determinado email
 
 

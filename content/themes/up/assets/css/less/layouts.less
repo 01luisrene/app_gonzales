@@ -53,6 +53,9 @@
 	&:hover{
 		color: @color-name-app-hover;
 	}
+	&:visited{
+		color: @color-name-app;
+	}
 }
 /*styles for the menu*/
 .nav-menu{
@@ -379,6 +382,7 @@
 		background-color: @color-white;
 		display: inherit;
 		.border-radius(50%);
+		overflow: hidden;
 		margin: 0;
 		height: 50px;
 		width: 50px;
@@ -389,10 +393,17 @@
 }
 }
 .disqus-box{
+	background: @color-white;
 	max-width: @max-width;
 	margin-bottom: @espacio-em;
+	padding-top: .5em;
+	h3{
+		display: inline-block;
+		position: relative;
+		.title-underlining(@color-titles, -.2em)
+	}
 }
-/*tags*/
+/*posts tags*/
 .tag-links{
 	a{
 		background: @bg-tags-link;
@@ -446,14 +457,11 @@
 		}
 	}
 }
+
+/*Posts Next and previous*/
 aside.read-next{
 	.flex-box-j-c(space-between);
 	margin-bottom: @espacio-em;
-	.no-cover{
-		.post{
-			display: inline-block;
-		}
-	}
 }
 .read-next-story{
 	background-color: @bg-no-cover;
@@ -522,7 +530,7 @@ aside.read-next{
 	position: fixed;
 	bottom: 0;
 	left: 0;
-  height: 4px;
+  height: @height-progress;
   width: 100%;
   z-index: @z-index + 2;
 }
@@ -548,7 +556,6 @@ aside.read-next{
 			border:3px solid @border-color-item;
 			font-size: 1.2em;
 			padding: .5em;
-			resize: vertical;
 			height: 55px;
 			width: 100%;
 			&:focus{
@@ -558,6 +565,7 @@ aside.read-next{
 	}
 	.form-imput textarea{
 		height: 250px;
+		resize: vertical;
 	}
 	.btn-form{
 		width: 145px;
@@ -652,7 +660,7 @@ aside.read-next{
 	font-size: 1.5em;
 }
 
-//site footer
+/*footer*/
 .site-footer{
 	background: @bg-footer;
 	color: @color-white;
@@ -678,7 +686,7 @@ aside.read-next{
 	margin-bottom: .5em;
 	padding-bottom: .3em;
 
-	.title-underlining(@border-color-item, -.2em);
+	.title-underlining(@border-color-item, -.2em, 2px);
 }
 .description{
 	width: 50%;

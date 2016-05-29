@@ -5,7 +5,8 @@
 
 {{! Everything inside the #post tags pulls data from the post }}
 {{#post}}
-{{!including presentation -> folder partials/presentation.hbs}}
+
+{{!including presentation - partials/presentation.hbs}}
 {{> "presentation"}}
 
 <article class="{{post_class}} post-content inner-box">
@@ -20,7 +21,7 @@
     </p>
     {{!icon author}}
     {{#author}}
-      {{#if author.image}}
+      {{#if image}}
         <a class="author-link" href="{{url}}" >
           <figure class="author-thumb" >
             <img src="{{image}}" alt="{{name}}'s Picture" nopin="nopin" title="Author: {{name}}"/>
@@ -111,14 +112,14 @@
   
 <aside class="read-next inner-box">
   {{#next_post}}
-    <a class="read-next-story next" {{#if image}} style="background-image: url({{image}})" {{else}} style="background-image: url({{asset "images/cover/cover_default.png"}})" {{/if}} href="{{url}}">
+    <a class="read-next-story next" {{#if image}} style="background-image: url({{image}})" {{else}} style="background-image: url({{asset "images/cover/default.png"}})" {{/if}} href="{{url}}">
         <section class="post">
             <h2>{{title}}</h2>
             <p>{{excerpt words="15"}}&hellip;</p>
         </section>
     </a>
   {{else}}
-    <a href="javascript:void(0))" class="read-next-story next" style="background-image: url({{asset "images/cover/cover_default.png"}})">
+    <a href="javascript:void(0))" class="read-next-story next" style="background-image: url({{asset "images/cover/default.png"}})">
       <section class="post">
         <h2>Previous</h2>
         <p>No more posts</p>
@@ -126,14 +127,14 @@
     </a>
   {{/next_post}}
   {{#prev_post}}
-    <a class="read-next-story prev" {{#if image}} style="background-image: url({{image}})" {{else}} style="background-image: url({{asset "images/cover/cover_default.png"}})" {{/if}} href="{{url}}">
+    <a class="read-next-story prev" {{#if image}} style="background-image: url({{image}})" {{else}} style="background-image: url({{asset "images/cover/default.png"}})" {{/if}} href="{{url}}">
         <section class="post">
             <h2>{{title}}</h2>
             <p>{{excerpt words="15"}}&hellip;</p>
         </section>
     </a>
   {{else}}
-    <a href="javascript:void(0))" class="read-next-story prev" style="background-image: url({{asset "images/cover/cover_default.png"}})">
+    <a href="javascript:void(0))" class="read-next-story prev" style="background-image: url({{asset "images/cover/default.png"}})">
       <section class="post">
         <h2>Next</h2>
         <p>No more posts</p>
@@ -142,6 +143,7 @@
   {{/prev_post}}
 </aside>
 <section class="disqus-box inner-box">
+<h3>And you who think?</h3>
   <div id="disqus_thread"></div>
   <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 </section>

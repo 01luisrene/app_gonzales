@@ -2,8 +2,9 @@
 {{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
 
 {{! If we have a tag cover, display that - else blog cover - else nothing }}
-<section class="presentation-section tag-head {{#if tag.image}}" style="background-image: url({{tag.image}}){{else}}{{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}{{/if}}">
-  {{!including search form -> folder partials/search.hbs}}
+<section class="presentation-section tag-head" {{#if tag.image}} style="background-image: url({{tag.image}})" {{else}} style="background-image: url({{asset "images/cover/categories_default.png"}})"{{/if}}>
+
+  {{!including search form  partials/search.hbs}}
   {{> "search"}}
     <div class="presentation-content inner-box">
       <h1 class="post-title">{{tag.name}}</h1>

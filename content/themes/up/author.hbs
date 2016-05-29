@@ -5,8 +5,8 @@
 
 {{! Everything inside the #author tags pulls data from the author }}
 {{#author}}
-  <section class="presentation-section author-head" {{#if cover}} style="background-image: url({{cover}})"{{else}} style="background-image: url({{asset "images/cover/cover_author_default.png"}})" {{/if}}>
-    {{!including search form -> folder partials/search.hbs}}
+  <section class="presentation-section author-head" {{#if cover}} style="background-image: url({{cover}})"{{else}} style="background-image: url({{asset "images/cover/author_default.png"}})" {{/if}}>
+    {{!including search form  partials/search.hbs}}
     {{> "search"}}
 
     <div class="vertical inner-box">

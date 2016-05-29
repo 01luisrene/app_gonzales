@@ -25,7 +25,7 @@
   h1, h2, h3, h4, h5, h6{
     display: inline-block;
     position: relative;
-    .title-underlining(@color-titles, -.2em)
+    .title-underlining(@color-titles, -.2em);
   }
   img{
     display: block;
@@ -45,10 +45,10 @@
   -moz-box-shadow:    @valor;
   box-shadow:         @valor;
 }
-.title-underlining(@valor, @two){
+.title-underlining(@valor, @two, @h-border: 3px){
   &::before{
     content: "";
-    border: 3px solid @valor;
+    border:@h-border  solid @valor;
     position: absolute;
     bottom: @two;
     width: 25%;

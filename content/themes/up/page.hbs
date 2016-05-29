@@ -5,6 +5,8 @@
 
 {{! Everything inside the #post tags pulls data from the page }}
 {{#post}}
+
+{{!including presentation - partials/presentation.hbs}}
 {{> "presentation"}}
   <article class="{{post_class}} page-content inner-box">
     <section class="content-body">
