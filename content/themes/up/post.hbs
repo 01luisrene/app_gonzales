@@ -8,21 +8,36 @@
 {{!including presentation -> folder partials/presentation.hbs}}
 {{> "presentation"}}
 
-<article class="{{post_class}} article-content box-inner">
-  <section class="body-content js_reading_time">
+<article class="{{post_class}} post-content inner-box">
+  <section class="content-body js_reading_time">
+    <div class="reading-author">
     {{!reading time and word count}}
     <p class="time-reading">
       Read time:
       <i class="fa fa-clock-o" aria-hidden="true"></i>
       <span class="reading-time"></span> 
       (<span class="word-count"></span> words)
-
-      {{#if tags}}
-       &nbsp;&nbsp;|&nbsp;&nbsp
-        <i class="fa fa-tags" aria-hidden="true"></i> 
-        {{tags prefix=" Labels: " separator=", " limit="3" autolink="false"}}
-      {{/if}}
     </p>
+    {{!icon author}}
+    {{#author}}
+      {{#if author.image}}
+        <a class="author-link" href="{{url}}" >
+          <figure class="author-thumb" >
+            <img src="{{image}}" alt="{{name}}'s Picture" nopin="nopin" title="Author: {{name}}"/>
+          </figure>
+        </a>
+        <span class="author-name">{{name}}</span>
+      {{else}}
+        <a class="author-link" href="{{url}}">
+        <figure class="author-thumb">
+          <img src="{{asset "images/author-default.png"}}" alt="Picture" nopin="nopin" title="image default"/>
+        </figure>
+        </a>
+      {{/if}}
+    {{/author}}
+  </div>
+      
+    </div>
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
     <div class="addthis_sharing_toolbox" style="display:block; text-align: center;"></div>
 
@@ -41,6 +56,10 @@
       {{#if image}}
       <figure class="author-image">
           <a class="img" href="{{url}}" style="background-image: url({{image}})"><span class="hidden">{{name}}'s Picture</span></a>
+      </figure>
+      {{else}}
+      <figure class="author-image">
+        <a class="img" href="{{url}}" style="background-image: url({{asset "images/author-default.png"}})"><span class="hidden">{{name}}'s Picture</span></a>
       </figure>
       {{/if}}
 
@@ -90,39 +109,42 @@
    </footer>
 </article>
   
-<aside class="read-next box-inner">
+<aside class="read-next inner-box">
   {{#next_post}}
-    <a class="read-next-story next {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}" href="{{url}}">
+    <a class="read-next-story next" {{#if image}} style="background-image: url({{image}})" {{else}} style="background-image: url({{asset "images/cover/cover_default.png"}})" {{/if}} href="{{url}}">
         <section class="post">
             <h2>{{title}}</h2>
             <p>{{excerpt words="15"}}&hellip;</p>
         </section>
     </a>
   {{else}}
-    <a href="javascript:void(0))" class="read-next-story next no-cover" style="background-image: url({{asset "images/cover/cover_default.jpg"}})">
+    <a href="javascript:void(0))" class="read-next-story next" style="background-image: url({{asset "images/cover/cover_default.png"}})">
       <section class="post">
-          <p>No more posts</p>
+        <h2>Previous</h2>
+        <p>No more posts</p>
       </section>
     </a>
   {{/next_post}}
   {{#prev_post}}
-    <a class="read-next-story prev {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}" href="{{url}}">
+    <a class="read-next-story prev" {{#if image}} style="background-image: url({{image}})" {{else}} style="background-image: url({{asset "images/cover/cover_default.png"}})" {{/if}} href="{{url}}">
         <section class="post">
             <h2>{{title}}</h2>
             <p>{{excerpt words="15"}}&hellip;</p>
         </section>
     </a>
   {{else}}
-    <a href="javascript:void(0))" class="read-next-story prev no-cover" style="background-image: url({{asset "images/cover/cover_default.jpg"}})">
+    <a href="javascript:void(0))" class="read-next-story prev" style="background-image: url({{asset "images/cover/cover_default.png"}})">
       <section class="post">
-          <p>No more posts</p>
+        <h2>Next</h2>
+        <p>No more posts</p>
       </section>
     </a>
   {{/prev_post}}
 </aside>
-
-<div class="box-disqus box-inner" id="disqus_thread"></div>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+<section class="disqus-box inner-box">
+  <div id="disqus_thread"></div>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</section>
 
 {{!progress reading}}
 <progress value="0" class="progress-reading"></progress>

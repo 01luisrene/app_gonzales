@@ -6,17 +6,17 @@
 
 */
 function search(){
-	var searchField =  $('#js_campo_search').ghostHunter({
-    results             : '#js_list_results',
+	var searchField =  $('#js_input_search').ghostHunter({
+    results             : '#js_results_list',
     info_template   : "<p class='number-posts'>Number of posts found: {{amount}}</p>",
     result_template : "<li><p> <a href='{{link}}'>{{title}}</a></p></li>",
     onKeyUp             : true,
     displaySearchInfo   : true
   });
-  $('#js_campo_search').on('keyup', function() {
-  	var $caja_buscar = $('#js_campo_search').val().length;
+  $('#js_input_search').on('keyup', function() {
+  	var $caja_buscar = $('#js_input_search').val().length;
 	  if($caja_buscar > 0){
-  		$('#js_box_results').css({
+  		$('#js_container-results').css({
   			display: 'block'
   		}).addClass('animated slideInLeft');
 	  }
@@ -26,10 +26,10 @@ function search(){
   hides the container of search of the articles
 */
 function closeSearch(){
-	$('#js_box_results_close').on('click', function(event) {
-		var $caja_buscar = $('#js_campo_search');
+	$('#js_results_close').on('click', function(event) {
+		var $caja_buscar = $('#js_input_search');
 		setTimeout(function(){ $caja_buscar.val(''); }, 1000);
-		$('#js_box_results').css({
+		$('#js_container-results').css({
 				display: 'none'
 		});
 	});
@@ -38,8 +38,8 @@ function closeSearch(){
   function to display the navigation pane hidden on mobile devices
 */
 function displayNav(){
-	$('#js_nav_icon_mobile').on('click', function(event) {
-		event.preventDefault();
+	$('#js_nav_icon_mobile').on('click', function(e) {
+		e.preventDefault();
 		$('#js_nav_menu').slideToggle();
 	});
 	$(window).resize(function(){
@@ -126,7 +126,7 @@ function cookiePolicy() {
   var cookie=getCookie("_upcookie");
   //validate whether the variable (cookie) is empty
   if (cookie == "") {
-    $('#js_barra_aceptacion_cookie').css({
+    $('#js_bar_accept_cookie').css({
         display: 'block'
     });
   }
@@ -140,7 +140,7 @@ function cookiePolicy() {
       // calls the setCookie () function and assigns values
       setCookie(nCookie, cCookie, 30);
       //hides the container with the id (js_barra_aceptacion_cookie)
-      $('#js_barra_aceptacion_cookie').css({
+      $('#js_bar_accept_cookie').css({
         display: 'none'
       });
       //show a message on the console
@@ -253,11 +253,11 @@ function disqus(newIdentifier, newUrl, newTitle) {
  function to validate contact form
 */
 function formContact(){
-  var form = $('.js_form_cantact'),
-      input_name = $('.js_form_cantact .js_input_name'),
-      input_email = $('.js_form_cantact .js_input_email'),
-      textarea_message = $('.js_form_cantact .js_textarea_message'),
-      btn_form = $('.js_form_cantact .js_btn_form'),
+  var form = $('.js_contact_form'),
+      input_name = $('.js_contact_form .js_input_name'),
+      input_email = $('.js_contact_form .js_input_email'),
+      textarea_message = $('.js_contact_form .js_textarea_message'),
+      btn_form = $('.js_contact_form .js_btn_form'),
       e_name = $('.js_error_name'),
       e_email = $('.js_error_email'),
       e_message = $('.js_error_message');
@@ -349,9 +349,12 @@ function formContact(){
         }
       });
 }
-
+//fitvids
+//================ http://fitvidsjs.com/ ============================
+function fitvidsjs(){
+  $('.post-content').fitVids();
+}
 //run the functions in the event (ready) of (jquery)
-
 $(document).ready(function() {
 	search();
 	closeSearch();
@@ -363,6 +366,7 @@ $(document).ready(function() {
   progressReading();
   readingTime();
   magnificPopup();
-  disqus();
+  disqus(window.location.href, window.location.href, $('.post-title').text());
   formContact();
+  fitvidsjs();
 });

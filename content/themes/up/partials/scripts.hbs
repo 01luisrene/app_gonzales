@@ -10,10 +10,12 @@
   <script type="text/javascript" src="{{asset "js/vendor/jquery.ghostHunter.min.js"}}"></script>
   <script type="text/javascript" src="{{asset "js/vendor/highlight.min.js"}}"></script>
   <script type="text/javascript" src="{{asset "js/vendor/readingTime.min.js"}}"></script>
-  <script type="text/javascript" src="{{asset "js/vendor/jquery.magnific-popup.min.js"}}"></script>  
+  <script type="text/javascript" src="{{asset "js/vendor/jquery.magnific-popup.min.js"}}"></script>
+  <script type="text/javascript" src="{{asset "js/vendor/jquery.fitvids.js"}}"></script>  
   
   {{! The main JavaScript file for Up }}
-  <script type="text/javascript" src="{{asset "js/app.js"}}"></script>
-
+  <script type="text/javascript" src="{{asset "js/up.js"}}"></script>
+{{#is "post"}}
    <!-- AddThis Widget -->
   <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5743d1f0565097d7"></script> 
+{{/is}}

@@ -8,15 +8,15 @@
 
 {{> "presentation"}}
 
-  <article class="{{post_class}} page-content box-inner">
-    <section class="body-content">
+  <article class="{{post_class}} page-content inner-box">
+    <section class="content-body">
         {{content}}
     </section>
-    <section class="from-contact">
+    <section class="contact-form">
 
-      <h3 class="title-contacto">Contact Form</h3>
+      <h3 class="contact-title">Contact Form</h3>
 
-      <form class="form-contact js_form_cantact" action="//formspree.io/your-email@email.com" method="POST">
+      <form class="js_contact_form" action="//formspree.io/your-email@email.com" method="POST">
         <!-- DO NOT EDIT BELOW THIS LINE -->
         <input type="hidden" name="_subject" value="Message of {{@blog.url}}" />
         <input type="text" name="_gotcha" style="display:none" />
@@ -33,7 +33,7 @@
           <textarea class="js_textarea_message" name="message" id="" cols="30" rows="3" placeholder="Write your message :)"></textarea>
           <span class="js_error_message e-form"></span>
         </div>
-          <input class="btn btn-form js_btn_form" type="submit" value="Send message"></input>
+          <input class="btn btn-primary btn-form js_btn_form" type="submit" value="Send message"></input>
       </form>
     </section>
   </article>

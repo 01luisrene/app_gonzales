@@ -1,5 +1,5 @@
 //clases univesal
-.box-inner {
+.inner-box {
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
@@ -72,7 +72,20 @@
     }
   }
 }
-
+.btn-primary{
+  background: @color-white;
+  border: thin solid @border-color-read-more;
+  .box-shadow(5px 5px 0px 0px @border-color-read-more);
+  padding: .7em 1em;
+  text-decoration: none;
+  transition: .800s;
+  &:hover{
+    background-color: lighten(@border-color-read-more, 6%);
+    border: thin solid @color-white;
+    color: @color-white;
+    text-decoration: underline;
+  }
+}
 //Magnific Popup
 .image-source-link {
  color: #FA2D4F;
@@ -86,40 +99,4 @@
 	text-transform: uppercase;
 	font-size: .7em;
 	font-weight: 700;
-}
-
-// Embeds responsive
-//
-// Credit: Nicolas Gallagher and SUIT CSS.
-
-.embed-responsive {
-  position: relative;
-  display: block;
-  height: 0;
-  padding: 0;
-  overflow: hidden;
-
-  .embed-responsive-item,
-  iframe,
-  embed,
-  object,
-  video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    height: 100%;
-    width: 100%;
-    border: 0;
-  }
-}
-
-// Modifier class for 16:9 aspect ratio
-.embed-responsive-16by9 {
-  padding-bottom: 56.25%;
-}
-
-// Modifier class for 4:3 aspect ratio
-.embed-responsive-4by3 {
-  padding-bottom: 75%;
 }

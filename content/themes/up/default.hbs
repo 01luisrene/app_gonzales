@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es-pe">
+<html lang="en">
 {{> "head" }}
 <body class="{{body_class}}">
 {{! This message will be displayed if the browser is IE version 8 or less. }}
@@ -17,15 +17,15 @@
   {{{body}}}
 
   <footer class="site-footer">
-    <div class="box-inner container-footer">
+    <div class="inner-box footer-container">
       {{! section for description of the blog }}
       <section class="description">
-        <span class="title-footer">Blog description</span>
+        <span class="footer-title">Blog description</span>
         <p>{{@blog.description}}</p> 
       </section>
       {{! section copyright and social networks }}
-      <section class="copyright-and-social-networks">
-        <span class="title-footer">{{@blog.title}}</span>
+      <section class="copyright-social-networks">
+        <span class="footer-title">{{@blog.title}}</span>
         <p>&copy; {{date format="YYYY"}}</p>
 
       <div class="social-networks">
@@ -55,9 +55,9 @@
     </div>
   </footer>
   {{! cookie policy bar }}
-  <div class="barra-aceptacion-cookie" id="js_barra_aceptacion_cookie" style="display: none;">
+  <div class="bar-accept-cookie" id="js_bar_accept_cookie" style="display: none;">
     <p> We request your permission to obtain statistical data on its navigation on this website, pursuant to Royal Decree-Law 13/2012. If you continue to browse we consider to accept the use of cookies. 
-    <a href="/politica-cookies/"  class="info-cookie" target="_blank">More information</a> &nbsp;
+    <a href="/cookie-policy/"  class="info-cookie" target="_blank">More information</a> &nbsp;
     <button id="js_btn_cookie" class="btn-cookie">Ok</button>
     </p>
   </div>

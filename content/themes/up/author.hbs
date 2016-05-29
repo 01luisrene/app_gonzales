@@ -5,11 +5,11 @@
 
 {{! Everything inside the #author tags pulls data from the author }}
 {{#author}}
-  <section class="presentation-section author-head {{#if cover}}" style="background-image: url({{cover}}){{else}}no-cover{{/if}}">
+  <section class="presentation-section author-head" {{#if cover}} style="background-image: url({{cover}})"{{else}} style="background-image: url({{asset "images/cover/cover_author_default.png"}})" {{/if}}>
     {{!including search form -> folder partials/search.hbs}}
     {{> "search"}}
 
-    <div class="vertical box-inner">
+    <div class="vertical inner-box">
       <div class="presentation-content">
         <h1 class="page-title">{{name}}</h1>
         {{#if bio}}
@@ -30,7 +30,7 @@
   </section>
 
   <section class="author-profile">
-    <div class="author-meta box-inner">
+    <div class="author-meta inner-box">
       {{#if location}}
         <i class="fa author-location fa-map-marker" aria-hidden="true"></i>
         <span class="author-location">
@@ -49,7 +49,7 @@
 {{/author}}
 
 {{! The main content area on the homepage }}
-<section class="content___loop box-inner">
+<section class="content___loop inner-box">
 
     {{! The tag below includes the post loop - partials/loop.hbs }}
     {{> "loop"}}

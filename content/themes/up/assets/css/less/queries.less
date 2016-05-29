@@ -3,7 +3,7 @@
 	.presentation-section{
 		background-attachment: fixed;
 	}
-	.box-inner {
+	.inner-box {
 	  width: 1200px;
 	}
 }
@@ -12,7 +12,7 @@
 	body{
 		color: tomato;
 	}
-	.box-inner {
+	.inner-box {
 	  width: 970px;
 	}
 /**********************************END*******************************************/
@@ -46,7 +46,7 @@
 /**********************************END*******************************************/
 
 	/*styles for class navigation*/
-	.box-inner-navigation{
+	.navigation-inner{
 		display: inherit;
 	}
 	.box-nav-mobile{
@@ -106,7 +106,7 @@
 		}
 	}
 	/**********************************END*******************************************/
-	.box-inner {
+	.inner-box {
 		width: 100%;
 	}
 	/**********************************END*******************************************/
@@ -125,13 +125,13 @@
 }
   /**********************************END*******************************************/
 	/*site footer*/
-	.container-footer{
+	.footer-container{
 		.flex-box-f-d(column);
 	}
-	.description, .copyright-and-social-networks{
+	.description, .copyright-social-networks{
 		width: 100%;
 	}
-	.copyright-and-social-networks{
+	.copyright-social-networks{
 		text-align: left;
 		border-top: thin dotted @border-color-item;
 		margin-top: 1em;
@@ -151,11 +151,11 @@
 	h6{font-size: @font-size-base - 3.3;}
 
 /**********************************END*******************************************/
-	.box-inner {
+	.inner-box {
 	  width: 100%;
 	}
 	/*styles for class navigation*/
-	.box-inner-navigation{
+	.navigation-inner{
 		display: inherit;
 	}
 	.box-nav-mobile{
@@ -235,7 +235,7 @@
 	}
 	/**********************************END*******************************************/
  /*styles post*/
- .article-content{
+ .post-content{
 		.time-reading{
 			font-size: .9em;
 			line-height: 25px;
@@ -272,13 +272,13 @@
 .next{margin-bottom: 1em;}
 	/**********************************END*******************************************/
 	/*site footer*/
-	.container-footer{
+	.footer-container{
 		.flex-box-f-d(column);
 	}
-	.description, .copyright-and-social-networks{
+	.description, .copyright-social-networks{
 		width: 100%;
 	}
-	.copyright-and-social-networks{
+	.copyright-social-networks{
 		text-align: left;
 		border-top: thin dotted @border-color-item;
 		margin-top: 1em;
@@ -331,12 +331,15 @@
 	}
 /**********************************END*******************************************/
 /*styles post*/
-	.article-content{
+.post-content{
+	.reading-author{
 		.time-reading{
 			font-size: .8em;
-			line-height: 25px;
+			line-height: 20px;
+			margin-top: 0;
 		}
 	}
+}
 /**********************************END*******************************************/
 	//pagination blog
 	.box-newer-posts, .box-older-posts{
